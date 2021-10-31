@@ -52,7 +52,7 @@
                         <a class="nav-link" href="{{route('data-kerusakan.index')}}">Kerusakan Alat</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Perbaikan Alat</a>
+                        <a class="nav-link" href="{{route('data-perbaikan.index')}}">Perbaikan Alat</a>
                     </nav>
                 </div>
 

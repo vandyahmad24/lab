@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlatController;
 use App\Http\Controllers\DataKerusakanController;
+use App\Http\Controllers\DataPerbaikanController;
 use App\Http\Controllers\JadwalKalibrasiController;
 use App\Http\Controllers\JadwalPemeliharaanController;
 use App\Http\Controllers\PicController;
@@ -59,3 +60,6 @@ Route::resource('riwayat-pemeliharaan', RiwayatPemeliharaanController::class);
 Route::get('/riwayat-pemeliharaan/delete/{id}',[App\Http\Controllers\RiwayatPemeliharaanController::class, 'destroy'])->name('riwayat-pemeliharaan.hapus');
 Route::resource('data-kerusakan', DataKerusakanController::class);
 Route::get('/data-kerusakan/delete/{id}',[App\Http\Controllers\DataKerusakanController::class, 'destroy'])->name('data-kerusakan.hapus');
+
+Route::resource('data-perbaikan', DataPerbaikanController::class);
+Route::get('/data-perbaikan/delete/{id}',[App\Http\Controllers\DataPerbaikanController::class, 'destroy'])->name('data-perbaikan.hapus');

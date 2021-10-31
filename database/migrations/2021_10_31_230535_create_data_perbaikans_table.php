@@ -13,8 +13,16 @@ class CreateDataPerbaikansTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_perbaikans', function (Blueprint $table) {
+        Schema::create('data_perbaikan', function (Blueprint $table) {
             $table->id();
+            $table->integer('alat_id');
+            $table->integer('pic_id');
+            $table->string('tanggal_perbaikan');
+            $table->text('jenis_kerusakan');
+            $table->text('jenis_perbaikan');
+            $table->string('vendor');
+            $table->string('bukti_perbaikan');
+            $table->string('kondisi_alat');
             $table->timestamps();
         });
     }
@@ -26,6 +34,6 @@ class CreateDataPerbaikansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data_perbaikans');
+        Schema::dropIfExists('data_perbaikan');
     }
 }
