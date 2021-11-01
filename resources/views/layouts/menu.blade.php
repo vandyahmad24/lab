@@ -6,9 +6,31 @@
                     
                     Dashboard
                 </a>
-                <a class="nav-link" href="{{route('master')}}">
+                {{-- <a class="nav-link" href="{{route('master')}}">
                     Data Master
+                </a> --}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#master" aria-expanded="false" aria-controls="master">
+                    
+                    Data Master
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                <div class="collapse" id="master" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('master-kategori')}}">Kategori</a>
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('master-lokasi')}}">Lokasi</a>
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('master-pic')}}">PIC</a>
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('satuan.index')}}">Satuan</a>
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('kode-penyimpanan.index')}}">Kode Penyimpanan</a>
+                    </nav>
+                </div>
                 <a class="nav-link" href="{{route('alat.index')}}">
                     Data Alat
                 </a>

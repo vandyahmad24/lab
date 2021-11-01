@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pic;
+use App\Models\Satuan;
 use Illuminate\Http\Request;
 
-class PicController extends Controller
+class SatuanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PicController extends Controller
      */
     public function index()
     {
-        // dd("Halo");
-        
+        $satuan = Satuan::all();
+        return view('master.satuan.index',compact('satuan'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PicController extends Controller
      */
     public function create()
     {
-        return view('master.pic.add-pic');
+        return view('master.satuan.create');
     }
 
     /**
@@ -37,8 +37,8 @@ class PicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Pic::create($data);
-        return redirect()->route('master-pic')->with('successpic','berhasil membuat pic data');
+        Satuan::create($data);
+        return redirect()->route('satuan.index')->with('success','berhasil membuat lokasi data'); 
     }
 
     /**
@@ -49,7 +49,7 @@ class PicController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -60,8 +60,8 @@ class PicController extends Controller
      */
     public function edit($id)
     {
-        $pic = Pic::find($id);
-        return view('master.pic.edit-pic',compact('pic'));
+        $satuan = Satuan::find($id);
+        return view('master.satuan.edit',compact('satuan'));
     }
 
     /**
@@ -73,10 +73,10 @@ class PicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pic=Pic::find($id);
-        $pic->nama=$request->nama;
-        $pic->save();
-        return redirect()->route('master-pic')->with('successpic','berhasil diubah pic data');
+        $satuan = Satuan::find($id);
+        $data = $request->all();
+        $satuan->update($data);
+        return redirect()->route('satuan.index')->with('success','berhasil mengupdate lokasi data');
     }
 
     /**
@@ -85,10 +85,10 @@ class PicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroy($id)
     {
-        $pic=Pic::find($id);
-        $pic->delete();
-        return redirect()->route('master-pic')->with('successpic','berhasil dihapus pic data');
+        $satuan = Satuan::find($id);
+        $satuan->delete();
+        return redirect()->route('satuan.index')->with('success','berhasil dihapus lokasi data');
     }
 }

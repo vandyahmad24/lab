@@ -5,9 +5,11 @@ use App\Http\Controllers\DataKerusakanController;
 use App\Http\Controllers\DataPerbaikanController;
 use App\Http\Controllers\JadwalKalibrasiController;
 use App\Http\Controllers\JadwalPemeliharaanController;
+use App\Http\Controllers\KodePenyimpananController;
 use App\Http\Controllers\PicController;
 use App\Http\Controllers\RiwayatKalibrasiController;
 use App\Http\Controllers\RiwayatPemeliharaanController;
+use App\Http\Controllers\SatuanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +30,13 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/master', [App\Http\Controllers\MasterController::class, 'index'])->name('master');
+Route::get('/master-kategori', [App\Http\Controllers\MasterController::class, 'indexKategori'])->name('master-kategori');
+Route::get('/master-lokasi', [App\Http\Controllers\MasterController::class, 'indexLokasi'])->name('master-lokasi');
+Route::get('/master-pic', [App\Http\Controllers\MasterController::class, 'indexPic'])->name('master-pic');
+Route::resource('satuan', SatuanController::class);
+Route::get('/satuan/hapus/{id}', [App\Http\Controllers\SatuanController::class, 'destroy'])->name('satuan-hapus');
+Route::resource('kode-penyimpanan', KodePenyimpananController::class);
+Route::get('/kode-penyimpanan/hapus/{id}', [App\Http\Controllers\KodePenyimpananController::class, 'destroy'])->name('kode-penyimpanan-hapus');
 
 // kategori
 Route::get('/add-kategori', [App\Http\Controllers\MasterController::class, 'addKategori'])->name('add-kategori');

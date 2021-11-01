@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pic;
+use App\Models\KodePenyimpanan;
 use Illuminate\Http\Request;
 
-class PicController extends Controller
+class KodePenyimpananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PicController extends Controller
      */
     public function index()
     {
-        // dd("Halo");
-        
+        $kodepenyimpanan = KodePenyimpanan::all();
+        return view('master.kode-penyimpanan.index',compact('kodepenyimpanan'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PicController extends Controller
      */
     public function create()
     {
-        return view('master.pic.add-pic');
+        return view('master.kode-penyimpanan.create');
     }
 
     /**
@@ -36,9 +36,9 @@ class PicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Pic::create($data);
-        return redirect()->route('master-pic')->with('successpic','berhasil membuat pic data');
+        $data= $request->all();
+        KodePenyimpanan::create($data);
+        return redirect()->route('kode-penyimpanan.index')->with('success','berhasil membuat kode penyimpanan data');
     }
 
     /**
@@ -49,7 +49,7 @@ class PicController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -60,8 +60,8 @@ class PicController extends Controller
      */
     public function edit($id)
     {
-        $pic = Pic::find($id);
-        return view('master.pic.edit-pic',compact('pic'));
+        $kode = KodePenyimpanan::find($id);
+        return view('master.kode-penyimpanan.edit', compact('kode'));
     }
 
     /**
@@ -73,10 +73,10 @@ class PicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pic=Pic::find($id);
-        $pic->nama=$request->nama;
-        $pic->save();
-        return redirect()->route('master-pic')->with('successpic','berhasil diubah pic data');
+        $data = $request->all();
+        $kode = KodePenyimpanan::find($id);
+        $kode->update($data);
+        return redirect()->route('kode-penyimpanan.index')->with('success','berhasil menyimpan kode penyimpanan data');
     }
 
     /**
@@ -85,10 +85,10 @@ class PicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroy($id)
     {
-        $pic=Pic::find($id);
-        $pic->delete();
-        return redirect()->route('master-pic')->with('successpic','berhasil dihapus pic data');
+        $kode = KodePenyimpanan::find($id);
+        $kode->delete();
+        return redirect()->route('kode-penyimpanan.index')->with('success','berhasil menghapus kode penyimpanan data');
     }
 }
