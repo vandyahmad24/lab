@@ -48,6 +48,8 @@ class JadwalPemeliharaanController extends Controller
             'pic_id' => 'required',
          ]);
          $data = $request->all();
+         $alat=Alat::find($request->alat_id);
+         $data['pic_id']=$alat->pic_id;
          $data['status_pelaksanaan']="belum";
          JadwalPemeliharaan::create($data);
          return redirect()->route('jadwal-pemeliharaan.index')->with('success','berhasil Membuat jadwal pemeliharaan');
@@ -94,6 +96,8 @@ class JadwalPemeliharaanController extends Controller
             'pic_id' => 'required',
          ]);
          $data= $request->all();
+         $alat=Alat::find($request->alat_id);
+         $data['pic_id']=$alat->pic_id;
          $jadwal = JadwalPemeliharaan::find($id);
          $jadwal->update($data);
          return redirect()->route('jadwal-pemeliharaan.index')->with('success','berhasil Mengupdate jadwal pemeliharaan');

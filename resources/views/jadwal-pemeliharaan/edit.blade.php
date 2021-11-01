@@ -37,7 +37,7 @@
                                             <select name="alat_id" id="alat_id" class="form-control">
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
-                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}" {{$jadwal->alat_id==$a->id ? "selected":''}} >{{$a->nama}}</option>
+                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}" {{$jadwal->alat_id==$a->id ? "selected":''}}  data-pic={{$a->pic->nama}}  > {{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -47,19 +47,16 @@
                                                 aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
+                                            <label for="">PIC</label>
+                                            <input type="text" name="pic_id" id="pic_id" class="form-control"  value="{{$a->pic->nama}}"
+                                                aria-describedby="emailHelp" readonly>
+                                        </div>
+                                        <div class="form-group mb-2">
                                             <label for="">Tanggal Pemeliharaan</label>
                                             <input type="date" name="tanggal_pemeliharaan" class="form-control" id="" value="{{$jadwal->tanggal_pemeliharaan}}"
                                                 aria-describedby="emailHelp">
                                         </div>
-                                        <div class="form-group mb-2">
-                                            <label for="">PIC</label>
-                                            <select name="pic_id" id="pic_id" class="form-control">
-                                                <option disabled selected value>Pilih Pic</option>
-                                                @foreach ($pic as $p)
-                                                    <option value="{{$p->id}}" {{$p->id==$jadwal->pic_id ? "selected":""}} >{{$p->nama}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        
                                         <div class="form-group mb-2">
                                             <label for="">Status Pelaksanaan</label>
                                             <select name="status_pelaksanaan" id="" class="form-control">
@@ -91,6 +88,8 @@
         $("#alat_id").change(function(){
             let el = $(this).find('option:selected');
             let val = el.attr("data-kategori")
+            let pic = el.attr("data-pic")
+            $("#pic_id").val(pic)
            $("#kategori").val(val)
 
         });

@@ -22,6 +22,10 @@
                                 <table id="#" class="table table-bordered">
                                     <tbody>
                                         <tr>
+                                            <th>Alat ID</th>
+                                            <td>{{$alat->alat_kode}}</td>
+                                        </tr>
+                                        <tr>
                                             <th>Nama</th>
                                             <td>{{$alat->nama}}</td>
                                         </tr>

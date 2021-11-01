@@ -36,7 +36,7 @@
                                             <select name="alat_id" id="alat_id" class="form-control">
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
-                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}">{{$a->nama}}</option>
+                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}">{{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

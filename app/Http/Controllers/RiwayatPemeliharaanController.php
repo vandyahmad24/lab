@@ -47,13 +47,14 @@ class RiwayatPemeliharaanController extends Controller
             'jenis_pemeliharaan' => 'required',
             'tanggal_pengecekan' => 'required',
             'kondisi_alat' => 'required',
-            'pic_id' => 'required',
          ]);
          $jenis_pemeliharaan = implode(",",$request->jenis_pemeliharaan);
         //  dd($jenis_pemeliharaan);
+         $alat = Alat::find($request->alat_id);
          $data = $request->all();
          $data["tanggal_pemeliharaan"]=$request->tanggal_pengecekan;
          $data["status_pelaksanaan"]="selesai";
+         $data["pic_id"]=$alat->pic_id;
         //  $data["tanggal_pengecekan"]=$request->tanggal_pengecekan;
          $data["jenis_pemeliharaan"]=$jenis_pemeliharaan;
         //  dd($data);
@@ -102,10 +103,11 @@ class RiwayatPemeliharaanController extends Controller
             'jenis_pemeliharaan' => 'required',
             'tanggal_pengecekan' => 'required',
             'kondisi_alat' => 'required',
-            'pic_id' => 'required',
          ]);
+         $alat = Alat::find($request->alat_id);
          $jenis_pemeliharaan = implode(",",$request->jenis_pemeliharaan);
          $data=$request->all();
+         $data["pic_id"]=$alat->pic_id;
          $data["jenis_pemeliharaan"]=$jenis_pemeliharaan;
          $jadwal= JadwalPemeliharaan::find($id);
          $jadwal->update($data);

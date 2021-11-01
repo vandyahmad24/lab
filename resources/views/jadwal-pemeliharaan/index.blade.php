@@ -31,6 +31,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Alat ID</th>
                                             <th>Alat</th>
                                             <th>Kategori Alat</th>
                                             <th>PIC</th>
@@ -43,9 +44,10 @@
                                         @foreach($jadwal as $a)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
+                                            <td>{{$a->alat->alat_kode ?? "-"}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
                                             <td>{{$a->alat->kategori->nama ?? "-"}}</td>
-                                            <td>{{$a->pic->nama}}</td>
+                                            <td>{{$a->alat->pic->nama ?? "-"}}</td>
                                             @php
                                             // $originalDate = $a->tanggal_kalibrasi."-"."01";
                                             $newDate = date("d-m-Y", strtotime($a->tanggal_pemeliharaan));

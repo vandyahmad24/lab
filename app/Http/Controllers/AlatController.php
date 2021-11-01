@@ -46,7 +46,10 @@ class AlatController extends Controller
     {
         // dd($request->all());
         $this->validate($request,[
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'alat_kode' => 'required|unique:alat,alat_kode',
+            'komponen_alat'=>'required',
+            'bahan_habis_pakai'=>'required'
          ]);
          $file = $request->file('foto');
          $rand = Str::random("10");
@@ -80,6 +83,7 @@ class AlatController extends Controller
     public function edit($id)
     {
         $alat = Alat::find($id);
+        // dd($alat);
         $pic=Pic::all();
         $lokasi=Lokasi::all();
         $kategori=Kategori::all();
@@ -98,6 +102,8 @@ class AlatController extends Controller
         $this->validate($request,[
             'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
          ]);
+         $alat = Alat::where("alat_kode",$id)->first();
+        
          $data = $request->all();
          if($request->file('foto')){
             $file=$request->file('foto');
@@ -107,7 +113,7 @@ class AlatController extends Controller
             $file->move($tujuan_upload,$nama);
             $data["foto"]=$nama;
          }
-         $alat = Alat::findOrFail($id);
+         
          $alat->update($data);
          return redirect()->route('alat.index')->with('success','berhasil mengupdate alat ');
 

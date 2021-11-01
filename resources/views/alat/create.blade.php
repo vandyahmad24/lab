@@ -32,6 +32,11 @@
                                     <form method="POST" action="{{route('alat.store')}}" enctype='multipart/form-data'>
                                         @csrf
                                         <div class="form-group mb-2">
+                                            <label for="">Alat ID</label>
+                                            <input type="text" name="alat_kode" class="form-control" id=""
+                                                aria-describedby="emailHelp"  required>
+                                        </div>
+                                        <div class="form-group mb-2">
                                             <label for="">Nama Alat</label>
                                             <input type="text" name="nama" class="form-control" id=""
                                                 aria-describedby="emailHelp"  required>

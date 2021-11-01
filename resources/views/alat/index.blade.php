@@ -31,6 +31,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Alat ID</th>
                                             <th>Nama Alat</th>
                                             <th>Kategori Alat</th>
                                             <th>Status Penggunaan</th>
@@ -44,6 +45,7 @@
                                         @foreach($alat as $a)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
+                                            <td>{{$a->alat_kode}}</td>
                                             <td>{{$a->nama}}</td>
                                             <td>{{$a->kategori->nama ?? '-'}}</td>
                                             <td>{{$a->status_pengunaan}}</td>

@@ -31,6 +31,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Alat ID</th>
                                             <th>Alat</th>
                                             <th>Jenis Kalibrasi</th>
                                             <th>Tanggal Kalibrasi</th>
@@ -43,6 +44,7 @@
                                         @foreach($jadwal as $a)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
+                                            <td>{{$a->alat->alat_kode ?? "-"}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
                                             <td>{{$a->jenis_kalibrasi}}</td>
                                             @php

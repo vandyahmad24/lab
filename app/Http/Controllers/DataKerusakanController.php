@@ -45,7 +45,6 @@ class DataKerusakanController extends Controller
     {
         $this->validate($request,[
             'alat_id' => 'required',
-            'pic_id' => 'required',
             'tanggal_temuan' => 'required',
             'jenis_kerusakan' => 'required',
             'akibat' => 'required',
@@ -53,7 +52,9 @@ class DataKerusakanController extends Controller
             'rencana' => 'required',
             'foto' => 'required',
          ]);
+         $alat = Alat::find($request->alat_id);
         $data = $request->all();
+        $data['pic_id']=$alat->pic_id;
         $file = $request->file('foto');
         $rand = Str::random("10");
         $nama = $rand.".".$file->getClientOriginalExtension();
@@ -101,14 +102,15 @@ class DataKerusakanController extends Controller
     {
         $this->validate($request,[
             'alat_id' => 'required',
-            'pic_id' => 'required',
             'tanggal_temuan' => 'required',
             'jenis_kerusakan' => 'required',
             'akibat' => 'required',
             'faktor' => 'required',
             'rencana' => 'required',
          ]);
+         $alat = Alat::find($request->alat_id);
         $data = $request->all();
+        $data['pic_id']=$alat->pic_id;
         if($request->file('foto')){
             $file = $request->file('foto');
             $rand = Str::random("10");

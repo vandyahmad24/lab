@@ -36,23 +36,19 @@
                                             <select name="alat_id" id="alat_id" class="form-control">
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
-                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}">{{$a->nama}}</option>
+                                                    <option value="{{$a->id}}" data-pic={{$a->pic->nama}}  data-kategori="{{$a->kategori->nama ?? "-" }}"> {{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Kategori Alat</label>
-                                            <input type="text" name="nama" id="kategori" class="form-control" id=""
+                                            <input type="text" name="" id="kategori" class="form-control" id=""
                                                 aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Nama PIC</label>
-                                            <select name="pic_id" id="" class="form-control">
-                                                <option disabled selected value>Pilih PIC</option>
-                                                @foreach ($pic as $p)
-                                                <option value="{{$p->id}}">{{$p->nama}}</option> 
-                                                @endforeach
-                                            </select>
+                                            <label for="">PIC</label>
+                                            <input type="text" name="pic_id" id="pic_id" class="form-control" id=""
+                                                aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Tanggal Temuan</label>
@@ -102,6 +98,8 @@
         $("#alat_id").change(function(){
             let el = $(this).find('option:selected');
             let val = el.attr("data-kategori")
+            let pic = el.attr("data-pic")
+            $("#pic_id").val(pic)
            $("#kategori").val(val)
 
         });

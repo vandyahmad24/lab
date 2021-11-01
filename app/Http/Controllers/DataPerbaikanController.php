@@ -44,7 +44,6 @@ class DataPerbaikanController extends Controller
         // dd($request->all());
         $this->validate($request,[
             'alat_id' => 'required',
-            'pic_id' => 'required',
             'tanggal_perbaikan' => 'required',
             'jenis_kerusakan' => 'required',
             'jenis_perbaikan' => 'required',
@@ -52,7 +51,9 @@ class DataPerbaikanController extends Controller
             'bukti_perbaikan' => 'required',
             'kondisi_alat'=>'required',
          ]);
+         $alat = Alat::find($request->alat_id);
         $data = $request->all();
+        $data['pic_id']=$alat->pic_id;
         $file = $request->file('bukti_perbaikan');
         $rand = Str::random("10");
         $nama = $rand.".".$file->getClientOriginalExtension();
@@ -82,7 +83,10 @@ class DataPerbaikanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $alat = Alat::all();
+        $perbaikan = DataPerbaikan::find($id);
+        return view('data-perbaikan.edit',compact('perbaikan','alat'));
+
     }
 
     /**
@@ -94,7 +98,29 @@ class DataPerbaikanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'alat_id' => 'required',
+            'tanggal_perbaikan' => 'required',
+            'jenis_kerusakan' => 'required',
+            'jenis_perbaikan' => 'required',
+            'vendor' => 'required',
+            'kondisi_alat'=>'required',
+         ]);
+         $alat = Alat::find($request->alat_id);
+        $data = $request->all();
+        $data['pic_id']=$alat->pic_id;
+        if($request->file('bukti_perbaikan')){
+            $file = $request->file('bukti_perbaikan');
+            $rand = Str::random("10");
+            $nama = $rand.".".$file->getClientOriginalExtension();
+            $tujuan_upload = "upload";
+            $file->move($tujuan_upload,$nama);
+            $data["bukti_perbaikan"]=$nama;
+        }
+      
+        $d = DataPerbaikan::find($id);
+        $d->update($data);
+        return redirect()->route('data-perbaikan.index')->with('success','berhasil Mengupdate Data Perbaikan');
     }
 
     /**

@@ -39,8 +39,8 @@
                                             <select name="alat_id" id="alat_id" class="form-control">
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
-                                                <option value="{{$a->id}}" {{$jadwal->alat_id == $a->id ? "selected":""}}
-                                                    data-kategori="{{$a->kategori->nama ?? "-" }}">{{$a->nama}}</option>
+                                                <option value="{{$a->id}}" {{$jadwal->alat_id == $a->id ? "selected":""}} data-pic="{{$a->pic->nama}}"
+                                                    data-kategori="{{$a->kategori->nama ?? "-" }}"> {{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -51,12 +51,8 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">PIC</label>
-                                            <select name="pic_id" id="pic_id" class="form-control">
-                                                <option disabled selected value>Pilih Pic</option>
-                                                @foreach ($pic as $p)
-                                                <option value="{{$p->id}}" {{$jadwal->pic_id==$p->id ? "selected":""}} >{{$p->nama}}</option>
-                                                @endforeach
-                                            </select>
+                                            <input type="text" name="pic_id" id="pic_id" class="form-control" value={{$jadwal->alat->pic->nama ?? "-"}}
+                                                aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Tanggal Pengecekan</label>
@@ -150,6 +146,8 @@
         $("#alat_id").change(function () {
             let el = $(this).find('option:selected');
             let val = el.attr("data-kategori")
+            let pic = el.attr("data-pic")
+            $("#pic_id").val(pic)
             $("#kategori").val(val)
 
         });

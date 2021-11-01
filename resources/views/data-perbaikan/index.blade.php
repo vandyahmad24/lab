@@ -31,6 +31,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Alat ID</th>
                                             <th>Alat</th>
                                             <th>Tanggal Perbaikan</th>
                                             <th>Jenis Kerusakan</th>
@@ -45,6 +46,7 @@
                                         @foreach($perbaikan as $a)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
+                                            <td>{{$a->alat->alat_kode}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
                                             @php
                                             $originalDate = $a->tanggal_temuan."-"."01";

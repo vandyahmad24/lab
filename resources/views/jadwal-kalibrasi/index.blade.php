@@ -31,6 +31,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Alat ID</th>
                                             <th>Alat</th>
                                             <th>Kategori Alat</th>
                                             <th>Jenis Kalibrasi</th>
@@ -43,6 +44,7 @@
                                         @foreach($jadwal as $a)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
+                                            <td>{{$a->alat_id}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
                                             <td>{{$a->alat->kategori->nama ?? "-"}}</td>
                                             <td>{{$a->jenis_kalibrasi}}</td>

@@ -29,9 +29,14 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <form method="POST" action="{{route('alat.update',$alat->id)}}" enctype='multipart/form-data'>
+                                    <form method="POST" action="{{route('alat.update',$alat->alat_kode)}}" enctype='multipart/form-data'>
                                         @method("PUT")
                                         @csrf
+                                        <div class="form-group mb-2">
+                                            <label for="">Alat ID</label>
+                                            <input type="text" name="alat_kode" class="form-control" id=""
+                                                aria-describedby="emailHelp" value="{{$alat->alat_kode}}" readonly>
+                                        </div>
                                         <div class="form-group mb-2">
                                             <label for="">Nama Alat</label>
                                             <input type="text" name="nama" value="{{$alat->nama}}" class="form-control"

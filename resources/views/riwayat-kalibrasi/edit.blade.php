@@ -33,13 +33,13 @@
                                         @method("PUT")
                                         @csrf
                                         <div class="form-group mb-2">
-                                            <label for="">Nama Alat</label>
+                                            <label for="">Alat</label>
                                             <select name="alat_id" id="alat_id" class="form-control">
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
                                                     <option value="{{$a->id}}"  data-kategori="{{$a->kategori->nama ?? "-" }}" 
                                                         {{$a->id==$jadwal->alat_id ?"selected":'-'}}
-                                                        >{{$a->nama}}</option>
+                                                        > {{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

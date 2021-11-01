@@ -32,13 +32,18 @@
                                     <form method="POST" action="{{route('jadwal-pemeliharaan.store')}}" enctype='multipart/form-data'>
                                         @csrf
                                         <div class="form-group mb-2">
-                                            <label for="">Nama Alat</label>
+                                            <label for="">Alat</label>
                                             <select name="alat_id" id="alat_id" class="form-control">
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
-                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}">{{$a->nama}}</option>
+                                                    <option value="{{$a->id}}" data-kategori="{{$a->kategori->nama ?? "-" }}" data-pic={{$a->pic->nama}} > {{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="">PIC</label>
+                                            <input type="text" name="pic_id" id="pic_id" class="form-control" 
+                                                aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Kategori Alat</label>
@@ -50,7 +55,7 @@
                                             <input type="date" name="tanggal_pemeliharaan" class="form-control" id=""
                                                 aria-describedby="emailHelp">
                                         </div>
-                                        <div class="form-group mb-2">
+                                        {{-- <div class="form-group mb-2">
                                             <label for="">PIC</label>
                                             <select name="pic_id" id="pic_id" class="form-control">
                                                 <option disabled selected value>Pilih Pic</option>
@@ -58,7 +63,7 @@
                                                     <option value="{{$p->id}}">{{$p->nama}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
                                         {{-- <div class="form-group mb-2">
                                             <label for="">Status Pelaksanaan</label>
                                             <select name="status_pelaksanaan" id="" class="form-control">
@@ -89,8 +94,9 @@
         $("#alat_id").change(function(){
             let el = $(this).find('option:selected');
             let val = el.attr("data-kategori")
-           $("#kategori").val(val)
-
+            let pic = el.attr("data-pic")
+            $("#pic_id").val(pic)
+            $("#kategori").val(val)
         });
 
 
