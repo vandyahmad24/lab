@@ -4,11 +4,11 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Data Penerimaan</h1>
+            <h1 class="mt-4">Data Penggunaan</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="#calonindex">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('penerimaan-bahan.index')}}">Penerimaan Bahan</a></li>
-                <li class="breadcrumb-item active">Tambah Penerimaan</li>
+                <li class="breadcrumb-item"><a href="{{route('penggunaan-bahan.index')}}">Penggunaan Bahan</a></li>
+                <li class="breadcrumb-item active">Tambah Penggunaan</li>
             </ol>
             <div class="row">
                 <div class="col-md-12">
@@ -24,12 +24,12 @@
                         @endif
 
                         <div class="card-header">
-                            Tambah Penerimaan
+                            Tambah Penggunaan
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form method="POST" action="{{route('penerimaan-bahan.update',$pen->id)}}" enctype='multipart/form-data'>
+                                    <form method="POST" action="{{route('penggunaan-bahan.update',$pen->id)}}" enctype='multipart/form-data'>
                                        @method('PUT')
                                         @csrf
                                         <div class="form-group mb-2">
@@ -56,14 +56,14 @@
                                                 aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Tanggal Penerimaan</label>
-                                            <input type="date" name="tanggal_penerimaan" id="tanggal_penerimaan" class="form-control"
-                                                aria-describedby="emailHelp" value="{{$pen->tanggal_penerimaan}}" >
+                                            <label for="">Tanggal Digunakan</label>
+                                            <input type="date" name="tanggal_digunakan" id="tanggal_penerimaan" class="form-control"
+                                                aria-describedby="emailHelp" value="{{$pen->tanggal_digunakan}}" >
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Jumlah diterima</label>
-                                            <input type="number"  name="jumlah_diterima"  id="jumlah_diterima" class="form-control"
-                                                aria-describedby="emailHelp" value="{{$pen->jumlah_diterima}}" readonly>
+                                            <label for="">Jumlah Digunakan</label>
+                                            <input type="number"  name="jumlah_digunakan"  id="jumlah_diterima" class="form-control"
+                                                aria-describedby="emailHelp" value="{{$pen->jumlah_digunakan}}" readonly>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Stok Bahan Sekarang</label>

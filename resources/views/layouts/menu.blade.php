@@ -91,7 +91,7 @@
                         <a class="nav-link" href="{{route('penerimaan-bahan.index')}}">Penerimaan Bahan</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Pengunaan Bahan</a>
+                        <a class="nav-link" href="{{route('penggunaan-bahan.index')}}">Pengunaan Bahan</a>
                     </nav>
                 </div>
                 

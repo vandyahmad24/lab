@@ -8,6 +8,7 @@ use App\Http\Controllers\JadwalKalibrasiController;
 use App\Http\Controllers\JadwalPemeliharaanController;
 use App\Http\Controllers\KodePenyimpananController;
 use App\Http\Controllers\PenerimaanController;
+use App\Http\Controllers\PenggunaanBahanController;
 use App\Http\Controllers\PicController;
 use App\Http\Controllers\RiwayatKalibrasiController;
 use App\Http\Controllers\RiwayatPemeliharaanController;
@@ -81,3 +82,6 @@ Route::get('/bahan/hapus/{id}', [App\Http\Controllers\BahanController::class, 'd
 // 
 Route::resource('penerimaan-bahan', PenerimaanController::class);
 Route::get('/penerimaan-bahan/hapus/{id}', [App\Http\Controllers\PenerimaanController::class, 'destroy'])->name('penerimaan-bahan.hapus');
+
+Route::resource('penggunaan-bahan', PenggunaanBahanController::class);
+Route::get('/penggunaan-bahan/hapus/{id}', [App\Http\Controllers\PenggunaanBahanController::class, 'destroy'])->name('penggunaan-bahan.hapus');

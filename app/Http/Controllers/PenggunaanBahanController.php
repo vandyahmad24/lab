@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bahan;
-use App\Models\PenerimaanBahan;
+use App\Models\PenggunaanBahan;
 use Illuminate\Http\Request;
 
-class PenerimaanController extends Controller
+class PenggunaanBahanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PenerimaanController extends Controller
      */
     public function index()
     {
-        $penerimaan = PenerimaanBahan::all();
-        return view('penerimaan.index',compact('penerimaan'));
+        $penerimaan = PenggunaanBahan::all();
+        return view('penggunaan.index',compact('penerimaan'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PenerimaanController extends Controller
         //     dd($b);
         // }
         // dd($bahan->alat->nama);
-        return view('penerimaan.create',compact('bahan'));
+        return view('penggunaan.create',compact('bahan'));
     }
 
     /**
@@ -42,19 +42,24 @@ class PenerimaanController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $this->validate($request,[
             'bahan_id' => 'required',
-            'tanggal_penerimaan' => 'required',
-            'jumlah_diterima' => 'required|numeric',
+            'tanggal_digunakan' => 'required',
+            'jumlah_digunakan' => 'required|numeric',
          ]);
          $data = $request->all();
-         PenerimaanBahan::create($data);
+         PenggunaanBahan::create($data);
          $bahan = Bahan::find($request->bahan_id);
          $sNow = $bahan->stok;
-         $pen = $request->jumlah_diterima;
-         $bahan->stok = $sNow+$pen;
+         $pen = $request->jumlah_digunakan;
+         $hasil = $sNow-$pen;
+         if($hasil <0){
+            return redirect()->route('penggunaan-bahan.create')->with('error','stok tidak mencukupi');
+         }
+         $bahan->stok = $hasil;
          $bahan->save();
-         return redirect()->route('penerimaan-bahan.index')->with('success','berhasil membuat penerimaan bahan');
+         return redirect()->route('penggunaan-bahan.index')->with('success','berhasil membuat penggunaan bahan');
     }
 
     /**
@@ -76,9 +81,9 @@ class PenerimaanController extends Controller
      */
     public function edit($id)
     {
-        $pen = PenerimaanBahan::find($id);
+        $pen = PenggunaanBahan::find($id);
         $bahan = Bahan::find($pen->bahan_id);
-        return view('penerimaan.edit',compact('pen','bahan'));
+        return view('penggunaan.edit',compact('pen','bahan'));
     }
 
     /**
@@ -91,12 +96,12 @@ class PenerimaanController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'tanggal_penerimaan' => 'required',
+            'tanggal_digunakan' => 'required',
          ]);
          $data = $request->all();
-         $pen = PenerimaanBahan::find($id);
+         $pen = PenggunaanBahan::find($id);
          $pen->update($data);
-         return redirect()->route('penerimaan-bahan.index')->with('success','berhasil mengupdate penerimaan bahan');
+         return redirect()->route('penggunaan-bahan.index')->with('success','berhasil mengupdate penggunaan bahan');
     }
 
     /**
@@ -107,8 +112,8 @@ class PenerimaanController extends Controller
      */
     public function destroy($id)
     {
-        $pen = PenerimaanBahan::find($id);
+        $pen = PenggunaanBahan::find($id);
         $pen->delete();
-        return redirect()->route('penerimaan-bahan.index')->with('success','berhasil menghapus penerimaan bahan');
+        return redirect()->route('penggunaan-bahan.index')->with('success','berhasil menghapus penggunaan bahan');
     }
 }

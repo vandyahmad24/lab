@@ -120,7 +120,7 @@
         });
         $("#jumlah_diterima").keyup(function(){
             val = $(this).val();
-            hasil = total_stok-val;
+            hasil = parseInt(total_stok)+parseInt(val);
             $("#total_stok").val(hasil)
             console.log(hasil)
         });
