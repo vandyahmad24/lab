@@ -70,8 +70,14 @@ Route::resource('jadwal-pemeliharaan', JadwalPemeliharaanController::class);
 Route::get('/jadwal-pemeliharaan/delete/{id}',[App\Http\Controllers\JadwalPemeliharaanController::class, 'destroy'])->name('jadwal-pemeliharaan.hapus');
 Route::resource('riwayat-pemeliharaan', RiwayatPemeliharaanController::class);
 Route::get('/riwayat-pemeliharaan/delete/{id}',[App\Http\Controllers\RiwayatPemeliharaanController::class, 'destroy'])->name('riwayat-pemeliharaan.hapus');
+
 Route::resource('data-kerusakan', DataKerusakanController::class);
 Route::get('/data-kerusakan/delete/{id}',[App\Http\Controllers\DataKerusakanController::class, 'destroy'])->name('data-kerusakan.hapus');
+Route::get('/data-kerusakan/permintaan/{id}',[App\Http\Controllers\DataKerusakanController::class, 'permintaan'])->name('data-kerusakan.permintaan');
+Route::post('/data-kerusakan/permintaan',[App\Http\Controllers\DataKerusakanController::class, 'permintaanCetak'])->name('data-kerusakan.permintaan.cetak');
+
+
+
 
 Route::resource('data-perbaikan', DataPerbaikanController::class);
 Route::get('/data-perbaikan/delete/{id}',[App\Http\Controllers\DataPerbaikanController::class, 'destroy'])->name('data-perbaikan.hapus');

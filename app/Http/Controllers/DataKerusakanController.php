@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Alat;
 use App\Models\DataKerusakan;
-use App\Models\JadwalPemeliharaan;
-use Dflydev\DotAccessData\Data;
+use PDF;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Str;
 
 class DataKerusakanController extends Controller
@@ -135,5 +133,32 @@ class DataKerusakanController extends Controller
         $kerusakan= DataKerusakan::find($id);
         $kerusakan->delete();
         return redirect()->route('data-kerusakan.index')->with('success','berhasil Menghapus Data Kerusakan');
+    }
+    public function permintaan($id)
+    {
+        $kerusakan= DataKerusakan::find($id);
+        return view('data-kerusakan.permintaan',compact('kerusakan'));
+    }
+    public function permintaanCetak(Request $request)
+    {
+        // dd($request->all());
+        $alat = Alat::find($request->alat_id);
+        $data =[
+            'nama_alat' => $alat->nama,
+            'kode_alat' =>$alat->alat_kode,
+            'lokasi' => $alat->lokasi->nama ?? "",
+            'tahun_perolehan' => $alat->tahun_perolehan,
+            'kerusakan' => $request->kerusakan,
+            'rencana_perbaikan' => $request->rencana_perbaikan,
+
+        ];
+        $pdf = PDF::loadview('cetak.permintaan',$data);
+    	return $pdf->stream('permintaan.pdf');
+        // $pdf = PDF::loadView('permintaan', $data);
+        // return $pdf->download('cetak_permintaan.pdf');
+
+        // dd($id);
+        // $kerusakan= DataKerusakan::find($id);
+        // return view('data-kerusakan.permintaan',compact('kerusakan'));
     }
 }

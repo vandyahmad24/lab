@@ -56,7 +56,9 @@
                                             @endphp
                                             <td>{{$newDate}}</td>
                                             <td>{{$a->jenis_kerusakan}}</td>
-                                            <td><a href="#" class="btn btn-primary btn-sm">Ajukan Permintaan</a></td>
+                                            <td><a href="{{route('data-kerusakan.permintaan',$a->id)}}" class="btn btn-primary btn-sm">Ajukan Permintaan</a>
+
+                                            </td>
                                             <td>
                                                 <a href="{{route('data-kerusakan.show',$a->id)}}"><i class="fas fa-eye"></i></a>
                                                 <a href="{{route('data-kerusakan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
