@@ -85,10 +85,10 @@
                 </a>
                 <div class="collapse" id="habispakai" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Persediaan Bahan</a>
+                        <a class="nav-link" href="{{route('bahan.index')}}">Persediaan Bahan</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Penerimaan Bahan</a>
+                        <a class="nav-link" href="{{route('penerimaan-bahan.index')}}">Penerimaan Bahan</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="layout-static.html">Pengunaan Bahan</a>

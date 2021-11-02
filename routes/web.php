@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AlatController;
+use App\Http\Controllers\BahanController;
 use App\Http\Controllers\DataKerusakanController;
 use App\Http\Controllers\DataPerbaikanController;
 use App\Http\Controllers\JadwalKalibrasiController;
 use App\Http\Controllers\JadwalPemeliharaanController;
 use App\Http\Controllers\KodePenyimpananController;
+use App\Http\Controllers\PenerimaanController;
 use App\Http\Controllers\PicController;
 use App\Http\Controllers\RiwayatKalibrasiController;
 use App\Http\Controllers\RiwayatPemeliharaanController;
@@ -72,3 +74,10 @@ Route::get('/data-kerusakan/delete/{id}',[App\Http\Controllers\DataKerusakanCont
 
 Route::resource('data-perbaikan', DataPerbaikanController::class);
 Route::get('/data-perbaikan/delete/{id}',[App\Http\Controllers\DataPerbaikanController::class, 'destroy'])->name('data-perbaikan.hapus');
+
+// bahan
+Route::resource('bahan', BahanController::class);
+Route::get('/bahan/hapus/{id}', [App\Http\Controllers\BahanController::class, 'destroy'])->name('bahan.hapus');
+// 
+Route::resource('penerimaan-bahan', PenerimaanController::class);
+Route::get('/penerimaan-bahan/hapus/{id}', [App\Http\Controllers\PenerimaanController::class, 'destroy'])->name('penerimaan-bahan.hapus');
