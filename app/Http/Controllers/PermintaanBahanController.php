@@ -54,7 +54,8 @@ class PermintaanBahanController extends Controller
      */
     public function show($id)
     {
-        //
+        $p = PermintaanBahan::find($id);
+        return view('permintaan-bahan.show',compact('p'));
     }
 
     /**

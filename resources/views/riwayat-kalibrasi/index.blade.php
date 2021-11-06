@@ -11,8 +11,9 @@
             </ol>
             <div class="row">
                 <div class="col-md-12">
-
+                    @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('jadwal-kalibrasi.create')}}" class="btn btn-success mb-2">Tambah Data Jadwal Kalibrasi</a>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -37,7 +38,9 @@
                                             <th>Tanggal Kalibrasi</th>
                                             <th>Remark</th>
                                             <th>Sertifikat</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -58,14 +61,16 @@
                                                 @if ($a->sertifikat)
                                                    <a href="{{asset('upload/'.$a->sertifikat)}}" class="btn btn-primary" download>Lihat Sertifikasi</a>
                                                 @else
-                                                <button class="btn btn-warning btn-sm">Belum Upload Sertifikasi</button>
+                                                <a href="{{route('riwayat-kalibrasi.edit',$a->id)}}" class="btn btn-warning btn-sm">Belum Upload Sertifikasi</a>
                                                 @endif
                                                 {{-- {{$a->sertifikat}} --}}
                                             </td>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
                                                 <a href="{{route('riwayat-kalibrasi.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('riwayat-kalibrasi.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
 

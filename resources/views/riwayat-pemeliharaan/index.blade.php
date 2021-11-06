@@ -11,8 +11,9 @@
             </ol>
             <div class="row">
                 <div class="col-md-12">
-
+                    @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('riwayat-pemeliharaan.create')}}" class="btn btn-success mb-2">Tambah Data Riwayat Pemeliharaan</a>
+                   @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -37,8 +38,10 @@
                                             <th>Tanggal Pemeliharaan</th>
                                             <th>Jenis Pemeliharaan</th>
                                             <th>Kondisi Alat</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Laporkan Kerusakan</th>
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,11 +59,13 @@
                                             <td>{{$newDate}}</td>
                                             <td>{{$a->jenis_pemeliharaan}}</td>
                                             <td>{{$a->kondisi_alat}}</td>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td><a href="" class="btn btn-success btn-sm">Buat Laporan</a></td>
                                             <td>
                                                 <a href="{{route('riwayat-pemeliharaan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('riwayat-pemeliharaan.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
 

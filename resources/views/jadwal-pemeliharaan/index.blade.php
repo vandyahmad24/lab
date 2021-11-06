@@ -11,8 +11,9 @@
             </ol>
             <div class="row">
                 <div class="col-md-12">
-
+                    @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('jadwal-pemeliharaan.create')}}" class="btn btn-success mb-2">Tambah Data Jadwal Pemeliharaan</a>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -37,7 +38,9 @@
                                             <th>PIC</th>
                                             <th>Tanggal Pemeliharaan</th>
                                             <th>Status Pelaksanaan</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,10 +71,12 @@
                                             }
                                             @endphp
                                             <td>{{$stat}}</td>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
                                                 <a href="{{route('jadwal-pemeliharaan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('jadwal-pemeliharaan.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
 

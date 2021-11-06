@@ -11,8 +11,9 @@
             </ol>
             <div class="row">
                 <div class="col-md-12">
-
+                    @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('data-perbaikan.create')}}" class="btn btn-success mb-2">Tambah Data Perbaikan</a>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -37,9 +38,11 @@
                                             <th>Jenis Kerusakan</th>
                                             <th>Jenis Perbaikan</th>
                                             <th>Vendor</th>
-                                            <th>Kondisi Alat</th>
                                             <th>Bukti Perbaikan</th>
+                                            <th>Kondisi Alat</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -58,15 +61,18 @@
                                             <td>{{$a->jenis_perbaikan}}</td>
                                             <td>{{$a->vendor}}</td>
                                             <td>
-
+                                                <a href="{{asset('upload/'.$a->bukti_perbaikan)}}" download>
                                                 <img src="{{asset('upload/'.$a->bukti_perbaikan)}}" alt="" style="max-width:600px;width:100%">
+                                                </a>
                                             </td>
                                             <td>{{$a->kondisi_alat}}</td>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
                                                 {{-- <a href="{{route('data-kerusakan.show',$a->id)}}"><i class="fas fa-eye"></i></a> --}}
                                                 <a href="{{route('data-perbaikan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('data-perbaikan.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
                                     </tbody>

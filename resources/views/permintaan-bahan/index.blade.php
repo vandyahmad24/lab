@@ -36,7 +36,9 @@
                                             <th>Merek</th>
                                             <th>Satuan</th>
                                             <th>Kebutuhan</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,12 +49,14 @@
                                             <td>{{$a->merek}}</td>
                                             <td>{{$a->satuan}}</td>
                                             <td>{{$a->kebutuhan}}</td>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
-                                                @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
+                                                <a href="{{route('permintaan-bahan.show',$a->id)}}"><i class="fas fa-eye"></i></a>
                                                 <a href="{{route('permintaan-bahan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('permintaan-bahan.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>
-                                                @endif
+                                               
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
 

@@ -11,8 +11,9 @@
             </ol>
             <div class="row">
                 <div class="col-md-12">
-
+                    @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('penerimaan-bahan.create')}}" class="btn btn-success mb-2">Tambah Data Penerimaan</a>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -37,7 +38,9 @@
                                             <th>Tanggal Penerimaan</th>
                                             <th>Jumlah diterima</th>
                                             <th>Satuan</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,11 +53,13 @@
                                             <td>{{$a->tanggal_penerimaan}}</td>
                                             <td>{{$a->jumlah_diterima}}</td>
                                             <td>{{$a->bahan->satuan->nama ?? "-"}}</td>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
                                                 {{-- <a href="{{route('penerimaan-bahan.show',$a->id)}}"><i class="fas fa-eye"></i></a> --}}
                                                 <a href="{{route('penerimaan-bahan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('penerimaan-bahan.hapus',$a->id)}}" onclick="confirm('Histori penerimaan akan hilang');" ><i class="fas fa-trash-alt"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
 
