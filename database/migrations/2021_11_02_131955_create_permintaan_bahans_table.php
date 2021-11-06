@@ -15,6 +15,10 @@ class CreatePermintaanBahansTable extends Migration
     {
         Schema::create('permintaan_bahans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('merek');
+            $table->string('satuan');
+            $table->string('kebutuhan');
             $table->timestamps();
         });
     }

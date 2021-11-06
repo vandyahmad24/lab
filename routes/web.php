@@ -9,10 +9,12 @@ use App\Http\Controllers\JadwalPemeliharaanController;
 use App\Http\Controllers\KodePenyimpananController;
 use App\Http\Controllers\PenerimaanController;
 use App\Http\Controllers\PenggunaanBahanController;
+use App\Http\Controllers\PermintaanBahanController;
 use App\Http\Controllers\PicController;
 use App\Http\Controllers\RiwayatKalibrasiController;
 use App\Http\Controllers\RiwayatPemeliharaanController;
 use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\UserManagementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,11 +28,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
 
-Auth::routes();
+
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
+Route::group(['middleware'=>['auth']], function(){
+
+// user
+Route::resource('user-management', UserManagementController::class);
+Route::get('/user-management/hapus/{id}', [App\Http\Controllers\UserManagementController::class, 'destroy'])->name('user-management.hapus');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('root');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/master', [App\Http\Controllers\MasterController::class, 'index'])->name('master');
 Route::get('/master-kategori', [App\Http\Controllers\MasterController::class, 'indexKategori'])->name('master-kategori');
@@ -91,3 +101,7 @@ Route::get('/penerimaan-bahan/hapus/{id}', [App\Http\Controllers\PenerimaanContr
 
 Route::resource('penggunaan-bahan', PenggunaanBahanController::class);
 Route::get('/penggunaan-bahan/hapus/{id}', [App\Http\Controllers\PenggunaanBahanController::class, 'destroy'])->name('penggunaan-bahan.hapus');
+// permintaan bahan
+Route::resource('permintaan-bahan', PermintaanBahanController::class);
+Route::get('/permintaan-bahan/hapus/{id}', [App\Http\Controllers\PermintaanBahanController::class, 'destroy'])->name('permintaan-bahan.hapus');
+});

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PermintaanBahan;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class PermintaanBahanController extends Controller
+class UserManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class PermintaanBahanController extends Controller
      */
     public function index()
     {
-        $pb = PermintaanBahan::all();
-        return view('permintaan-bahan.index',compact('pb'));
+        $user = User::all();
+        return view('user-management.index',compact('user'));
     }
 
     /**
@@ -25,7 +26,7 @@ class PermintaanBahanController extends Controller
      */
     public function create()
     {
-        return view('permintaan-bahan.create');
+        return view('user-management.create');
     }
 
     /**
@@ -37,13 +38,19 @@ class PermintaanBahanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nama' => 'required',
-            'merek' => 'required',
-            'satuan' => 'required',
-            'kebutuhan' => 'required',
-         ]);
-         PermintaanBahan::create($request->all());
-         return redirect()->route('permintaan-bahan.index')->with('success','berhasil menambah permintaan bahan');
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        $data=$request->all();
+        User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'level' => $data['level'],
+            'jabatan'=>$data['jabatan']
+        ]);
+        return redirect()->route('user-management.index')->with('success','berhasil Membuat user baru');
     }
 
     /**
@@ -65,8 +72,8 @@ class PermintaanBahanController extends Controller
      */
     public function edit($id)
     {
-        $p = PermintaanBahan::find($id);
-        return view('permintaan-bahan.edit',compact('p'));
+        $user = User::find($id);
+        return view('user-management.edit',compact('user'));
     }
 
     /**
@@ -78,16 +85,10 @@ class PermintaanBahanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'nama' => 'required',
-            'merek' => 'required',
-            'satuan' => 'required',
-            'kebutuhan' => 'required',
-         ]);
-        $data =$request->all();
-        $p = PermintaanBahan::find($id);
-        $p->update($data);
-        return redirect()->route('permintaan-bahan.index')->with('success','berhasil mengupdate permintaan bahan');
+        $user = User::find($id);
+        $data = $request->all();
+        $user->update($data);
+        return redirect()->route('user-management.index')->with('success','berhasil Mengupdate user baru');
     }
 
     /**
@@ -98,8 +99,8 @@ class PermintaanBahanController extends Controller
      */
     public function destroy($id)
     {
-        $p=PermintaanBahan::find($id);
-        $p->delete();
-        return redirect()->route('permintaan-bahan.index')->with('success','berhasil menghapus permintaan bahan');
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user-management.index')->with('success','berhasil Menghapus user baru');
     }
 }

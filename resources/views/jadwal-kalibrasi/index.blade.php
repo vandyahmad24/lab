@@ -11,8 +11,9 @@
             </ol>
             <div class="row">
                 <div class="col-md-12">
-
+                    @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('jadwal-kalibrasi.create')}}" class="btn btn-success mb-2">Tambah Data Jadwal Kalibrasi</a>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -37,7 +38,9 @@
                                             <th>Jenis Kalibrasi</th>
                                             <th>Tanggal Kalibrasi</th>
                                             <th>Status Proses Kalibrasi</th>
+                                            @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -73,8 +76,10 @@
                                             @endphp
                                             <td>{{$stat}}</td>
                                             <td>
+                                                @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                                 <a href="{{route('jadwal-kalibrasi.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('jadwal-kalibrasi.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                                @endif
                                             </td>
                                         </tr>
                                         @endforeach

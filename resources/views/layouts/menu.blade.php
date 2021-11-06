@@ -1,19 +1,22 @@
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
+            {{-- menu untuk admin --}}
+            {{-- @if (Auth::user()->level=='admin') --}}
             <div class="nav">
-                <a class="nav-link" href="index.html">
-                    
+                <a class="nav-link" href="#">
                     Dashboard
                 </a>
                 {{-- <a class="nav-link" href="{{route('master')}}">
                     Data Master
                 </a> --}}
+                @if (Auth::user()->level=='admin')
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#master" aria-expanded="false" aria-controls="master">
-                    
                     Data Master
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
+                @endif
+               
                 <div class="collapse" id="master" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('master-kategori')}}">Kategori</a>
@@ -30,22 +33,17 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('kode-penyimpanan.index')}}">Kode Penyimpanan</a>
                     </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('user-management.index')}}">User Management</a>
+                    </nav>
                 </div>
                 <a class="nav-link" href="{{route('alat.index')}}">
                     Data Alat
                 </a>
-                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                    
-                    Data Alat
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                <a class="nav-link" href="{{route('permintaan-bahan.index')}}">
+                    Data Permintaan
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Pemeliharaan</a>
-                    </nav>
-                </div> --}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#kalibrasi" aria-expanded="false" aria-controls="kalibrasi">
-                    
                     Kalibrasi
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -96,10 +94,12 @@
                 </div>
                 
             </div>
+            {{-- @endif --}}
+          
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Login Sebagai</div>
-            Start Bootstrap
+            {{Auth::user()->jabatan}} <br> Level: {{Auth::user()->level}}
         </div>
     </nav>
 </div>

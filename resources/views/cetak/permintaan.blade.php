@@ -1,73 +1,106 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Permintaan</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+<meta charset="UTF-8">
+<title>Aloha!</title>
+
+<style type="text/css">
+    * {
+        font-family: Verdana, Arial, sans-serif;
+    }
+    table{
+        font-size: x-small;
+    }
+    tfoot tr td{
+        font-weight: bold;
+        font-size: x-small;
+    }
+    .gray {
+        background-color: lightgray
+    }
+</style>
 
 </head>
-
 <body>
-    <div class="row">
-        <div class="container">
-            <center>
-                <h4>PERMINTAAN PERBAIKAN ALAT</h4>
-            </center>
-            <div style="line-height: normal">
-                <p>Kepada Yth <br>
-                    Bagian Pengadaan <br>
-                    di Tempat</p>
-            </div>
-            <p class="mr-5">Permintaan perbaikan alat Laboratorium Pengujian Fisika
-                Teksil
-                dengan rincian sebagai berikut:</p>
-            <div class="row justify-content-center">
-                <div class="col-auto">
-                    <table class="table table-borderless">
-                        <tr>
-                            <td>1. Nama Alat</td>
-                            <td>{{$nama_alat}}</td>
-                        </tr>
-                        <tr>
-                            <td>2. Kode Alat</td>
-                            <td>{{$kode_alat}}</td>
-                        </tr>
-                        <tr>
-                            <td>3. Lokasi</td>
-                            <td>{{$lokasi}}</td>
-                        </tr>
-                        <tr>
-                            <td>4. Tahun Perolehan</td>
-                            <td>{{$tahun_perolehan}}</td>
-                        </tr>
-                        <tr>
-                            <td>5. Kerusakan</td>
-                            <td>{{$kerusakan}}</td>
-                        </tr>
-                        <tr>
-                            <td>6. Rencana Perbaikan</td>
-                            <td>{{$rencana_perbaikan}}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
 
-        </div>
+  <table width="100%">
+    <tr>
+        <td align="left">
+            <h3>Shinra Electric power company</h3>
+            <pre>
+                Company representative name
+                Company address
+                Tax ID
+                phone
+                fax
+            </pre>
+        </td>
+    </tr>
 
-        <br>
+  </table>
 
-    </div>
-    </div>
+  <table width="100%">
+    <tr>
+        <td><strong>From:</strong> Linblum - Barrio teatral</td>
+        <td><strong>To:</strong> Linblum - Barrio Comercial</td>
+    </tr>
+
+  </table>
+
+  <br/>
+
+  <table width="100%">
+    <thead style="background-color: lightgray;">
+      <tr>
+        <th>#</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Unit Price $</th>
+        <th>Total $</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Playstation IV - Black</td>
+        <td align="right">1</td>
+        <td align="right">1400.00</td>
+        <td align="right">1400.00</td>
+      </tr>
+      <tr>
+          <th scope="row">1</th>
+          <td>Metal Gear Solid - Phantom</td>
+          <td align="right">1</td>
+          <td align="right">105.00</td>
+          <td align="right">105.00</td>
+      </tr>
+      <tr>
+          <th scope="row">1</th>
+          <td>Final Fantasy XV - Game</td>
+          <td align="right">1</td>
+          <td align="right">130.00</td>
+          <td align="right">130.00</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3"></td>
+            <td align="right">Subtotal $</td>
+            <td align="right">1635.00</td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td align="right">Tax $</td>
+            <td align="right">294.3</td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td align="right">Total $</td>
+            <td align="right" class="gray">$ 1929.3</td>
+        </tr>
+    </tfoot>
+  </table>
+
 </body>
-
 </html>
