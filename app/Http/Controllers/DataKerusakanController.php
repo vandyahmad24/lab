@@ -26,11 +26,16 @@ class DataKerusakanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $alat_ada=null;
+        if ($request->has('alat_id')) {
+            $alat_id = $request->input('alat_id');
+            $alat_ada = Alat::find($alat_id);
+        }
         $alat = Alat::all();
         $pic = Alat::all();
-        return view('data-kerusakan.create',compact('alat','pic'));
+        return view('data-kerusakan.create',compact('alat','pic','alat_ada'));
     }
 
     /**

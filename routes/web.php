@@ -104,4 +104,8 @@ Route::get('/penggunaan-bahan/hapus/{id}', [App\Http\Controllers\PenggunaanBahan
 // permintaan bahan
 Route::resource('permintaan-bahan', PermintaanBahanController::class);
 Route::get('/permintaan-bahan/hapus/{id}', [App\Http\Controllers\PermintaanBahanController::class, 'destroy'])->name('permintaan-bahan.hapus');
+Route::get('/permintaan-bahan-reset', [App\Http\Controllers\PermintaanBahanController::class, 'truncate'])->name('permintaan-bahan.reset');
+Route::get('/permintaan-bahan-cetak', [App\Http\Controllers\PermintaanBahanController::class, 'cetak'])->name('permintaan-bahan.cetak');
+
+
 });

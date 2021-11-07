@@ -60,7 +60,7 @@
                                             <td>{{$a->jenis_pemeliharaan}}</td>
                                             <td>{{$a->kondisi_alat}}</td>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
-                                            <td><a href="" class="btn btn-success btn-sm">Buat Laporan</a></td>
+                                            <td><a href="{{route('data-kerusakan.create',['alat_id'=>$a->alat->id])}}" class="btn btn-success btn-sm">Buat Laporan</a></td>
                                             <td>
                                                 <a href="{{route('riwayat-pemeliharaan.edit',$a->id)}}"><i class="far fa-edit"></i></a>
                                                 <a href="{{route('riwayat-pemeliharaan.hapus',$a->id)}}"><i class="fas fa-trash-alt"></i></a>

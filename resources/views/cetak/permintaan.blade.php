@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aloha!</title>
+<title>Permintaan Perbaikan</title>
 
 <style type="text/css">
     * {
         font-family: Verdana, Arial, sans-serif;
     }
     table{
-        font-size: x-small;
+        font-size: 15px;
     }
     tfoot tr td{
         font-weight: bold;
-        font-size: x-small;
+        font-size: 15px;
     }
     .gray {
         background-color: lightgray
@@ -22,84 +22,104 @@
 
 </head>
 <body>
-
+  <h4 align="center">PERMINTAAN PERBAIKAN ALAT</h4>
   <table width="100%">
     <tr>
         <td align="left">
-            <h3>Shinra Electric power company</h3>
-            <pre>
-                Company representative name
-                Company address
-                Tax ID
-                phone
-                fax
-            </pre>
+           Kepada Yth.
         </td>
     </tr>
-
-  </table>
-
-  <table width="100%">
     <tr>
-        <td><strong>From:</strong> Linblum - Barrio teatral</td>
-        <td><strong>To:</strong> Linblum - Barrio Comercial</td>
+      <td align="left">
+        Bagian Pengadaan
+     </td>
+    </tr>
+    <tr>
+      <td align="left">
+        di Tempat.
+     </td>
     </tr>
 
   </table>
-
+  <table width="100%" style="margin-top: 10px;">
+    <tr>
+      <td align="left">
+        Permintaan perbaikan alat Laboratorium Pengujian Fisika Teksil dengan rincian sebagai berikut:
+      </td>
+    </tr>
+  </table>
+  
   <br/>
 
-  <table width="100%">
-    <thead style="background-color: lightgray;">
+  <table width="50%" style="margin-left: 30px;">
       <tr>
-        <th>#</th>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Unit Price $</th>
-        <th>Total $</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Playstation IV - Black</td>
-        <td align="right">1</td>
-        <td align="right">1400.00</td>
-        <td align="right">1400.00</td>
+        <td align="left">Nama Alat</td>
+        <td align="left">{{$nama_alat}}</td>
       </tr>
       <tr>
-          <th scope="row">1</th>
-          <td>Metal Gear Solid - Phantom</td>
-          <td align="right">1</td>
-          <td align="right">105.00</td>
-          <td align="right">105.00</td>
+        <td align="left">Kode Alat</td>
+        <td align="left">{{$kode_alat}}</td>
       </tr>
       <tr>
-          <th scope="row">1</th>
-          <td>Final Fantasy XV - Game</td>
-          <td align="right">1</td>
-          <td align="right">130.00</td>
-          <td align="right">130.00</td>
+        <td align="left">Lokasi</td>
+        <td align="left">{{$lokasi}}</td>
       </tr>
-    </tbody>
-
-    <tfoot>
-        <tr>
-            <td colspan="3"></td>
-            <td align="right">Subtotal $</td>
-            <td align="right">1635.00</td>
-        </tr>
-        <tr>
-            <td colspan="3"></td>
-            <td align="right">Tax $</td>
-            <td align="right">294.3</td>
-        </tr>
-        <tr>
-            <td colspan="3"></td>
-            <td align="right">Total $</td>
-            <td align="right" class="gray">$ 1929.3</td>
-        </tr>
-    </tfoot>
+      <tr>
+        <td align="left">Tahun Perolehan </td>
+        <td align="left">{{$tahun_perolehan}}</td>
+      </tr>
+      <tr>
+        <td align="left">Kerusakan</td>
+        <td align="left">{{$kerusakan}}</td>
+      </tr>
+      <tr>
+        <td align="left">Rencana Perbaikan</td>
+        <td align="left">{{$rencana_perbaikan}}</td>
+      </tr>
+  </table>
+  <table width="100%" style="margin-top: 55px;">
+    <tr align="center">
+      <td>Plt. Kasie Pengujian</td>
+      <td>Bandung, {{date("d-M-Y") }} <br>
+        Penyedia Laboratorium</td>
+    </tr>
+    <tr align="center">
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+    </tr> 
+    <tr align="center">
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+    </tr> 
+    <tr align="center">
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+    </tr> 
+    <tr align="center">
+      <td>
+        <br>
+      </td>
+      <td>
+        <br>
+      </td>
+    </tr> 
+    
+    <tr align="center">
+      <td>Drs. Srie Sunaryati, MM</td>
+      <td>Rangga Safta Puri. S. Teks.</td>
+    </tr> 
   </table>
 
 </body>

@@ -103,4 +103,15 @@ class PermintaanBahanController extends Controller
         $p->delete();
         return redirect()->route('permintaan-bahan.index')->with('success','berhasil menghapus permintaan bahan');
     }
+    public function truncate()
+    {
+        // dd("halo");
+        PermintaanBahan::truncate();
+        return redirect()->route('permintaan-bahan.index')->with('success','berhasil mereset permintaan bahan');
+    }
+    public function cetak()
+    {
+        dd("halo");
+      
+    }
 }
