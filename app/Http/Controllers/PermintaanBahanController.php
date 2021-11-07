@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PermintaanBahan;
 use Illuminate\Http\Request;
+use PDF;
 
 class PermintaanBahanController extends Controller
 {
@@ -111,7 +112,9 @@ class PermintaanBahanController extends Controller
     }
     public function cetak()
     {
-        dd("halo");
+        $pb = PermintaanBahan::all();
+        $pdf = PDF::loadview('cetak.permintaan-bahan',compact('pb'));
+    	return $pdf->stream('permintaan-bahan.pdf');
       
     }
 }
