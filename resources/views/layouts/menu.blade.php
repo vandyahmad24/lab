@@ -99,7 +99,7 @@
                 </a>
                 <div class="collapse" id="laporan" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{route('jadwal-pemeliharaan.index')}}">Equipment Inventory</a>
+                        <a class="nav-link" href="{{route('laporan-equipment')}}">Equipment Inventory</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('riwayat-pemeliharaan.index')}}">Laporan Kerusakan</a>

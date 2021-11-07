@@ -32,7 +32,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Alat ID</th>
+                                            <th>ID Alat</th>
                                             <th>Alat</th>
                                             <th>Tanggal Perbaikan</th>
                                             <th>Jenis Kerusakan</th>

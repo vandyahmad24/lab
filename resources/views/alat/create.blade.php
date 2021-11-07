@@ -32,7 +32,7 @@
                                     <form method="POST" action="{{route('alat.store')}}" enctype='multipart/form-data'>
                                         @csrf
                                         <div class="form-group mb-2">
-                                            <label for="">Alat ID</label>
+                                            <label for="">ID Alat</label>
                                             <input type="text" name="alat_kode" class="form-control" id=""
                                                 aria-describedby="emailHelp"  required>
                                         </div>
@@ -42,7 +42,7 @@
                                                 aria-describedby="emailHelp"  required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="kategori">Kategori alat</label>
+                                            <label for="kategori">Kategori Alat</label>
                                             <select class="form-control" id="kategori" name="kategori_id">
                                                 @foreach ($kategori as $k)
                                                 <option value="{{$k->id}}">{{$k->nama}}</option>
@@ -60,9 +60,9 @@
                                                 aria-describedby="emailHelp" placeholder="tipe" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Nomer seri</label>
+                                            <label for="">Nomer Seri</label>
                                             <input type="number" name="no_seri" class="form-control" id=""
-                                                aria-describedby="emailHelp" placeholder="Nomer seri" required>
+                                                aria-describedby="emailHelp" placeholder="Nomer Seri" required>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Software</label>
@@ -75,7 +75,7 @@
                                                 aria-describedby="emailHelp" placeholder="Tahun Perolehan" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="lokasi">Lokasi alat</label>
+                                            <label for="lokasi">Lokasi Alat</label>
                                             <select class="form-control" id="lokasi" name="lokasi_id">
                                                 @foreach ($lokasi as $k)
                                                 <option value="{{$k->id}}">{{$k->nama}}</option>
@@ -83,9 +83,9 @@
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Kondisi alat</label>
+                                            <label for="">Kondisi Alat</label>
                                             <input type="text" name="kondisi" class="form-control" id=""
-                                                aria-describedby="emailHelp" placeholder="Kondisi alat" required>
+                                                aria-describedby="emailHelp" placeholder="Kondisi Alat" required>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="status_pengunaan">Status Penggunaan</label>
@@ -104,35 +104,25 @@
                                         <div class="form-group mb-2">
                                             <label for="periode_pemeliharaan">Periode Pemeliharaan</label>
                                             <select class="form-control" id="periode_pemeliharaan" name="periode_pemeliharaan">
-                                                <option value="Januari">Januari</option>
-                                                <option value="Februari">Februari</option>
-                                                <option value="Maret">Maret</option>
-                                                <option value="April">April</option>
-                                                <option value="Mei">Mei</option>
-                                                <option value="Juni">Juni</option>
-                                                <option value="Juli">Juli</option>
-                                                <option value="Agustus">Agustus</option>
-                                                <option value="September">September</option>
-                                                <option value="Oktober">Oktober</option>
-                                                <option value="November">November</option>
-                                                <option value="Desember">Desember</option>
+                                                
+                                                @php
+                                                    // $i=1;
+                                                    for($i=1; $i<=12; $i++){
+                                                        echo "<option value='$i'>$i</option>";
+                                                    }
+                                                @endphp
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="periode_kalibrasi">Periode Kalibrasi</label>
                                             <select class="form-control" id="periode_kalibrasi" name="periode_kalibrasi">
-                                                <option value="Januari">Januari</option>
-                                                <option value="Februari">Februari</option>
-                                                <option value="Maret">Maret</option>
-                                                <option value="April">April</option>
-                                                <option value="Mei">Mei</option>
-                                                <option value="Juni">Juni</option>
-                                                <option value="Juli">Juli</option>
-                                                <option value="Agustus">Agustus</option>
-                                                <option value="September">September</option>
-                                                <option value="Oktober">Oktober</option>
-                                                <option value="November">November</option>
-                                                <option value="Desember">Desember</option>
+                                                
+                                                @php
+                                                    // $i=1;
+                                                    for($i=1; $i<=12; $i++){
+                                                        echo "<option value='$i'>$i</option>";
+                                                    }
+                                                @endphp
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">

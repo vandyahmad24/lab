@@ -32,7 +32,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Alat ID</th>
+                                            <th>ID Alat</th>
                                             <th>Alat</th>
                                             <th>Kategori Alat</th>
                                             <th>Jenis Kalibrasi</th>

@@ -33,7 +33,7 @@
                                         @method("PUT")
                                         @csrf
                                         <div class="form-group mb-2">
-                                            <label for="">Alat ID</label>
+                                            <label for="">ID Alat</label>
                                             <input type="text" name="alat_kode" class="form-control" id=""
                                                 aria-describedby="emailHelp" value="{{$alat->alat_kode}}" readonly>
                                         </div>
@@ -43,7 +43,7 @@
                                                 id="" aria-describedby="emailHelp" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="kategori">Kategori alat</label>
+                                            <label for="kategori">Kategori Alat</label>
                                             <select class="form-control" id="kategori" name="kategori_id">
                                                 @foreach ($kategori as $k)
                                                 <option value="{{$k->id}}" {{ $k->id==$alat->id ? 'selected':'' }}>
@@ -63,10 +63,10 @@
                                                 id="" aria-describedby="emailHelp" placeholder="tipe" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Nomer seri</label>
+                                            <label for="">Nomer Seri</label>
                                             <input type="number" name="no_seri" value="{{$alat->no_seri}}"
                                                 class="form-control" id="" aria-describedby="emailHelp"
-                                                placeholder="Nomer seri" required>
+                                                placeholder="Nomer Seri" required>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Software</label>
@@ -81,7 +81,7 @@
                                                 aria-describedby="emailHelp" placeholder="Tahun Perolehan" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="lokasi">Lokasi alat</label>
+                                            <label for="lokasi">Lokasi Alat</label>
                                             <select class="form-control" id="lokasi" name="lokasi_id">
                                                 @foreach ($lokasi as $k)
                                                 <option value="{{$k->id}}"
@@ -91,10 +91,10 @@
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Kondisi alat</label>
+                                            <label for="">Kondisi Alat</label>
                                             <input type="text" name="kondisi" value="{{$alat->kondisi}}"
                                                 class="form-control" id="" aria-describedby="emailHelp"
-                                                placeholder="Kondisi alat" required>
+                                                placeholder="Kondisi Alat" required>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="status_pengunaan">Status Penggunaan</label>
@@ -119,80 +119,82 @@
                                             <label for="periode_pemeliharaan">Periode Pemeliharaan</label>
                                             <select class="form-control" id="periode_pemeliharaan"
                                                 name="periode_pemeliharaan">
-                                                <option value="Januari" {{
-                                                $alat->periode_pemeliharaan=="Januari" ? 'selected':'' }}>Januari
-                                                </option>
-                                                <option value="Februari"
-                                                    {{$alat->periode_pemeliharaan=="Februari" ? 'selected':'' }}>
-                                                    Februari</option>
-                                                <option value="Maret"
-                                                    {{$alat->periode_pemeliharaan=="Maret" ? 'selected':'' }}>Maret
-                                                </option>
-                                                <option value="April"
-                                                    {{$alat->periode_pemeliharaan=="April" ? 'selected':'' }}>April
-                                                </option>
-                                                <option value="Mei"
-                                                    {{$alat->periode_pemeliharaan=="Mei" ? 'selected':'' }}>Mei</option>
-                                                <option value="Juni"
-                                                    {{$alat->periode_pemeliharaan=="Juni" ? 'selected':'' }}>Juni
-                                                </option>
-                                                <option value="Juli"
-                                                    {{$alat->periode_pemeliharaan=="Juli" ? 'selected':'' }}>Juli
-                                                </option>
-                                                <option value="Agustus"
-                                                    {{$alat->periode_pemeliharaan=="Agustus" ? 'selected':'' }}>Agustus
-                                                </option>
-                                                <option value="September"
-                                                    {{$alat->periode_pemeliharaan=="September" ? 'selected':'' }}>
-                                                    September</option>
-                                                <option value="Oktober"
-                                                    {{$alat->periode_pemeliharaan=="Oktober" ? 'selected':'' }}>Oktober
-                                                </option>
-                                                <option value="November"
-                                                    {{$alat->periode_pemeliharaan=="November" ? 'selected':'' }}>
-                                                    November</option>
-                                                <option value="Desember"
-                                                    {{$alat->periode_pemeliharaan=="Desember" ? 'selected':'' }}>
-                                                    Desember</option>
+                                                <option value="1" {{
+                                                    $alat->periode_pemeliharaan=="1" ? 'selected':'' }}>1
+                                                    </option>
+                                                    <option value="2"
+                                                        {{$alat->periode_pemeliharaan=="2" ? 'selected':'' }}>
+                                                        2</option>
+                                                    <option value="3"
+                                                        {{$alat->periode_pemeliharaan=="3" ? 'selected':'' }}>3
+                                                    </option>
+                                                    <option value="4"
+                                                        {{$alat->periode_pemeliharaan=="4" ? 'selected':'' }}>4
+                                                    </option>
+                                                    <option value="5"
+                                                        {{$alat->periode_pemeliharaan=="5" ? 'selected':'' }}>5</option>
+                                                    <option value="6"
+                                                        {{$alat->periode_pemeliharaan=="6" ? 'selected':'' }}>6
+                                                    </option>
+                                                    <option value="7"
+                                                        {{$alat->periode_pemeliharaan=="7" ? 'selected':'' }}>7
+                                                    </option>
+                                                    <option value="8"
+                                                        {{$alat->periode_pemeliharaan=="8" ? 'selected':'' }}>8
+                                                    </option>
+                                                    <option value="9"
+                                                        {{$alat->periode_pemeliharaan=="9" ? 'selected':'' }}>
+                                                        9</option>
+                                                    <option value="10"
+                                                        {{$alat->periode_pemeliharaan=="10" ? 'selected':'' }}>10
+                                                    </option>
+                                                    <option value="11"
+                                                        {{$alat->periode_pemeliharaan=="11" ? 'selected':'' }}>
+                                                        11</option>
+                                                    <option value="12"
+                                                        {{$alat->periode_pemeliharaan=="12" ? 'selected':'' }}>
+                                                        12</option>
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="periode_kalibrasi">Periode Kalibrasi</label>
                                             <select class="form-control" id="periode_kalibrasi"
                                                 name="periode_kalibrasi">
-                                                <option value="Januari" {{
-                                                 $alat->periode_kalibrasi=="Januari" ? 'selected':'' }}>Januari
-                                                </option>
-                                                <option value="Februari"
-                                                    {{$alat->periode_kalibrasi=="Februari" ? 'selected':'' }}>Februari
-                                                </option>
-                                                <option value="Maret"
-                                                    {{$alat->periode_kalibrasi=="Maret" ? 'selected':'' }}>Maret
-                                                </option>
-                                                <option value="April"
-                                                    {{$alat->periode_kalibrasi=="April" ? 'selected':'' }}>April
-                                                </option>
-                                                <option value="Mei"
-                                                    {{$alat->periode_kalibrasi=="Mei" ? 'selected':'' }}>Mei</option>
-                                                <option value="Juni"
-                                                    {{$alat->periode_kalibrasi=="Juni" ? 'selected':'' }}>Juni</option>
-                                                <option value="Juli"
-                                                    {{$alat->periode_kalibrasi=="Juli" ? 'selected':'' }}>Juli</option>
-                                                <option value="Agustus"
-                                                    {{$alat->periode_kalibrasi=="Agustus" ? 'selected':'' }}>Agustus
-                                                </option>
-                                                <option value="September"
-                                                    {{$alat->periode_kalibrasi=="September" ? 'selected':'' }}>September
-                                                </option>
-                                                <option value="Oktober"
-                                                    {{$alat->periode_kalibrasi=="Oktober" ? 'selected':'' }}>Oktober
-                                                </option>
-                                                <option value="November"
-                                                    {{$alat->periode_kalibrasi=="November" ? 'selected':'' }}>November
-                                                </option>
-                                                <option value="Desember"
-                                                    {{$alat->periode_kalibrasi=="Desember" ? 'selected':'' }}>Desember
-                                                </option>
+                                                <option value="1" {{
+                                                    $alat->periode_kalibrasi=="1" ? 'selected':'' }}>1
+                                                    </option>
+                                                    <option value="2"
+                                                        {{$alat->periode_kalibrasi=="2" ? 'selected':'' }}>
+                                                        2</option>
+                                                    <option value="3"
+                                                        {{$alat->periode_kalibrasi=="3" ? 'selected':'' }}>3
+                                                    </option>
+                                                    <option value="4"
+                                                        {{$alat->periode_kalibrasi=="4" ? 'selected':'' }}>4
+                                                    </option>
+                                                    <option value="5"
+                                                        {{$alat->periode_kalibrasi=="5" ? 'selected':'' }}>5</option>
+                                                    <option value="6"
+                                                        {{$alat->periode_kalibrasi=="6" ? 'selected':'' }}>6
+                                                    </option>
+                                                    <option value="7"
+                                                        {{$alat->periode_kalibrasi=="7" ? 'selected':'' }}>7
+                                                    </option>
+                                                    <option value="8"
+                                                        {{$alat->periode_kalibrasi=="8" ? 'selected':'' }}>8
+                                                    </option>
+                                                    <option value="9"
+                                                        {{$alat->periode_kalibrasi=="9" ? 'selected':'' }}>
+                                                        9</option>
+                                                    <option value="10"
+                                                        {{$alat->periode_kalibrasi=="10" ? 'selected':'' }}>10
+                                                    </option>
+                                                    <option value="11"
+                                                        {{$alat->periode_kalibrasi=="11" ? 'selected':'' }}>
+                                                        11</option>
+                                                    <option value="12"
+                                                        {{$alat->periode_kalibrasi=="12" ? 'selected':'' }}>
+                                                        12</option>
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">

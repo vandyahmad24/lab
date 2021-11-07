@@ -22,7 +22,7 @@
                                 <table id="#" class="table table-bordered">
                                     <tbody>
                                         <tr>
-                                            <th>Alat ID</th>
+                                            <th>ID Alat</th>
                                             <td>{{$alat->alat_kode}}</td>
                                         </tr>
                                         <tr>
@@ -74,8 +74,8 @@
                                             <td>{{$alat->periode_pemeliharaan}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Periode Pemeliharaan </th>
-                                            <td>{{$alat->periode_pemeliharaan}}</td>
+                                            <th>Periode Kalibrasi </th>
+                                            <td>{{$alat->periode_kalibrasi}}</td>
                                         </tr>
                                         <tr>
                                             <th>Ik Alat </th>
