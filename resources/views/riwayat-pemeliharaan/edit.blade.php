@@ -68,9 +68,9 @@
                                             <div class="container">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="jenis_pemeliharaan[]" 
-                                                        value="Monitoring Alat" 
+                                                        value="Checking" 
                                                         @foreach ($explode as $e)
-                                                            @if ($e=="Monitoring Alat")
+                                                            @if ($e=="Checking")
                                                                 checked
                                                             @endif
                                                         @endforeach
