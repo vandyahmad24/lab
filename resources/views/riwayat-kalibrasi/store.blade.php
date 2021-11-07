@@ -8,7 +8,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="#calonindex">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{route('jadwal-kalibrasi.index')}}">Riwayat Kalibrasi</a></li>
-                <li class="breadcrumb-item active">Edit Riwayat Kalibrasi</li>
+                <li class="breadcrumb-item active">Tambah Riwayat Kalibrasi</li>
             </ol>
             <div class="row">
                 <div class="col-md-12">
@@ -24,13 +24,12 @@
                         @endif
 
                         <div class="card-header">
-                            Edit Riwayat Kalibrasi
+                            Tambah Riwayat Kalibrasi
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form method="POST" action="{{route('riwayat-kalibrasi.update',$jadwal->id)}}" enctype='multipart/form-data'>
-                                        @method("PUT")
+                                    <form method="POST" action="{{route('riwayat-kalibrasi.store')}}" enctype='multipart/form-data'>
                                         @csrf
                                         <div class="form-group mb-2">
                                             <label for="">Alat</label>
@@ -38,14 +37,14 @@
                                                 <option disabled selected value>Pilih Alat</option>
                                                 @foreach ($alat as $a)
                                                     <option value="{{$a->id}}"  data-kategori="{{$a->kategori->nama ?? "-" }}" 
-                                                        {{$a->id==$jadwal->alat_id ?"selected":'-'}}
+                                                        
                                                         > {{$a->alat_kode}} || {{$a->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Kategori Alat</label>
-                                            <input type="text" name="nama" id="kategori" class="form-control" value="{{$jadwal->alat->kategori->nama ??''}}"
+                                            <input type="text" name="nama" id="kategori" class="form-control" value=""
                                                 aria-describedby="emailHelp" readonly>
                                         </div>
                                         <div class="form-group mb-2">
@@ -57,12 +56,12 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Tanggal Kalibrasi</label>
-                                            <input type="month" name="tanggal_kalibrasi" class="form-control" id="" value={{$jadwal->tanggal_kalibrasi}}
+                                            <input type="month" name="tanggal_kalibrasi" class="form-control" id="" value=""
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Remark</label>
-                                            <input type="text" name="remark" class="form-control" id="" value="{{$jadwal->remakr}}"
+                                            <input type="text" name="remark" class="form-control" id="" value=""
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="form-group mb-2">

@@ -78,7 +78,7 @@
                                             <td>{{$alat->periode_kalibrasi}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Ik Alat </th>
+                                            <th>IK Alat </th>
                                             <td>{{$alat->ik_alat}}</td>
                                         </tr>
                                         <tr>
@@ -86,7 +86,7 @@
                                             <td>{{$alat->manual_book}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Pic </th>
+                                            <th>PIC </th>
                                             <td>{{$alat->pic->nama ?? '-'}}</td>
                                         </tr>
                                         <tr>

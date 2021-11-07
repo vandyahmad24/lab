@@ -46,6 +46,9 @@ class JadwalKalibrasiController extends Controller
             'status_kalibrasi' => 'required',
          ]);
         $data = $request->all();
+        $alat = Alat::find($request->alat_id);
+        $alat->kalibrasi == $request->status_kalibrasi;
+        $alat->save();
         JadwalKalibrasi::create($data);
         return redirect()->route('jadwal-kalibrasi.index')->with('success','berhasil Membuat jadwal kalibrasi');
     }
@@ -92,6 +95,9 @@ class JadwalKalibrasiController extends Controller
          $data = $request->all();
          $alat = JadwalKalibrasi::findOrFail($id);
          $alat->update($data);
+         $alat = Alat::find($request->alat_id);
+         $alat->kalibrasi == $request->status_kalibrasi;
+         $alat->save();
          return redirect()->route('jadwal-kalibrasi.index')->with('success','berhasil Mengupdate jadwal kalibrasi');
         // dd($request->all());
     }

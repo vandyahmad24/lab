@@ -27,7 +27,9 @@ class RiwayatKalibrasiController extends Controller
      */
     public function create()
     {
-        //
+        // $jadwal = JadwalKalibrasi::find($id);
+        $alat = Alat::all();
+        return view('riwayat-kalibrasi.store',compact('alat'));
     }
 
     /**
@@ -38,7 +40,26 @@ class RiwayatKalibrasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'alat_id' => 'required',
+            'jenis_kalibrasi' => 'required',
+            'tanggal_kalibrasi' => 'required',
+            'remark' => 'required',
+            'sertifikat' => 'required',
+         ]);
+        $data=$request->all();
+        $file=$request->file('sertifikat');
+        $rand = Str::random("10");
+        $nama = $rand.".".$file->getClientOriginalExtension();
+        $tujuan_upload = "upload";
+        $file->move($tujuan_upload,$nama);
+        $data["sertifikat"]=$nama;
+        $data['status_kalibrasi']='selesai';
+
+        JadwalKalibrasi::create($data);
+       
+        return redirect()->route('riwayat-kalibrasi.index')->with('success','berhasil Membuat Riwayat kalibrasi');
+
     }
 
     /**

@@ -111,9 +111,11 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Status Kalibrasi</label>
-                                            <input type="text" name="kalibrasi" value="{{$alat->kalibrasi}}"
-                                                class="form-control" id="" aria-describedby="emailHelp"
-                                                placeholder="Status Kalibrasi alat" required>
+                                            <select name="kalibrasi" id="" class="form-control">
+                                                <option value="proses-kalibrasi" {{$alat->kalibrasi == "proses-kalibrasi" ? "selected":""}} >Proses Kalibrasi</option>
+                                                <option value="selesai" {{$alat->kalibrasi == "selesai" ? "selected":""}}>Selesai</option>
+                                                <option value="tidak-dapat-diproses" {{$alat->kalibrasi == "tidak-dapat-diproses" ? "selected":""}}>Tidak Dapat diproses</option>
+                                            </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="periode_pemeliharaan">Periode Pemeliharaan</label>
@@ -198,7 +200,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="ik_alat">Ik Alat</label>
+                                            <label for="ik_alat">IK Alat</label>
                                             <select class="form-control" id="ik_alat" name="ik_alat">
 
                                                 <option value="ada" {{$alat->ik_alat=="ada" ? "selected":""}}>Ada
@@ -220,7 +222,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="pic">Pic</label>
+                                            <label for="pic">PIC</label>
                                             <select class="form-control" id="pic" name="pic_id">
                                                 @foreach ($pic as $k)
                                                 <option value="{{$k->id}}" {{$k->id == $alat->pic_id ? "selected":""}}>

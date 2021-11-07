@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
-                    <a href="{{route('jadwal-kalibrasi.create')}}" class="btn btn-success mb-2">Tambah Data Jadwal Kalibrasi</a>
+                    <a href="{{route('riwayat-kalibrasi.create')}}" class="btn btn-success mb-2">Tambah Data Riwayat Kalibrasi</a>
                     @endif
                     <div class="card mb-4">
                         <div class="card-header">
