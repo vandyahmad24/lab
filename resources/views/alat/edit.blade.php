@@ -92,9 +92,13 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Kondisi Alat</label>
-                                            <input type="text" name="kondisi" value="{{$alat->kondisi}}"
-                                                class="form-control" id="" aria-describedby="emailHelp"
-                                                placeholder="Kondisi Alat" required>
+                                            
+                                                <select name="kondisi" required id="" class="form-control">
+                                                    <option disabled selected value>Kondisi Alat</option>
+                                                    <option value="Baik" {{$alat->kondisi=="Baik" ? "selected":""}} >Baik</option>
+                                                    <option value="Rusak Ringan" {{$alat->kondisi=="Rusak Ringan" ? "selected":""}} >Rusak Ringan</option>
+                                                    <option value="Rusak Berat" {{$alat->kondisi=="Rusak Berat" ? "selected":""}} >Rusak Berat</option>
+                                                </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="status_pengunaan">Status Penggunaan</label>

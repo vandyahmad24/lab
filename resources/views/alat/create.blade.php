@@ -84,8 +84,12 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Kondisi Alat</label>
-                                            <input type="text" name="kondisi" class="form-control" id=""
-                                                aria-describedby="emailHelp" placeholder="Kondisi Alat" required>
+                                                <select name="kondisi" required id="" class="form-control">
+                                                    <option disabled selected value>Kondisi Alat</option>
+                                                    <option value="Baik">Baik</option>
+                                                    <option value="Rusak Ringan">Rusak Ringan</option>
+                                                    <option value="Rusak Berat">Rusak Berat</option>
+                                                </select>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="status_pengunaan">Status Penggunaan</label>

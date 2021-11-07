@@ -112,5 +112,6 @@ Route::get('/permintaan-bahan-cetak', [PermintaanBahanController::class, 'trunca
 
 // laporan
 Route::get('/laporan-equipment', [LaporanController::class, 'index'])->name('laporan-equipment');
+Route::get('/laporan-equipment/cetak', [LaporanController::class, 'cetak'])->name('laporan-equipment-cetak');
 
 });

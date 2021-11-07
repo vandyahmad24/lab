@@ -27,28 +27,27 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form method="get" action="{{route('jadwal-pemeliharaan.store')}}"
+                                    <form method="get" action="{{route('laporan-equipment-cetak')}}"
                                         enctype='multipart/form-data'>
-                                        @csrf
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group mb-2">
                                                     <label for="">Tanggal Mulai</label>
-                                                    <input type="date" name="tanggal_mulai" id="tanggal_mulai"
+                                                    <input type="date" required name="tanggal_mulai" id="tanggal_mulai"
                                                         class="form-control" aria-describedby="emailHelp" >
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group mb-2">
                                                     <label for="">Tanggal Selesai</label>
-                                                    <input type="date" name="tanggal_selesai" id="tanggal_selesai"
+                                                    <input type="date" required name="tanggal_selesai" id="tanggal_selesai"
                                                         class="form-control" aria-describedby="emailHelp" >
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group mb-2">
                                                     <label for="">Filter By</label>
-                                                    <select name="filter" class="form-control">
+                                                    <select name="filter" required class="form-control">
                                                         <option value="data_alat">Data Alat</option>
                                                         <option value="riwayat_kalibrasi">Riwayat Kalibrasi</option>
                                                         <option value="riwayat_pemeliharaan">Riwayat Pemeliharaan</option>
