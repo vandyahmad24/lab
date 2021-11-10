@@ -57,6 +57,9 @@ class RiwayatKalibrasiController extends Controller
         $data['status_kalibrasi']='selesai';
 
         JadwalKalibrasi::create($data);
+        $alat = Alat::find($request->alat_id);
+        $alat->kalibrasi = "Selesai kalibrasi - ".date("d/M/Y");
+        $alat->save();
        
         return redirect()->route('riwayat-kalibrasi.index')->with('success','berhasil Membuat Riwayat kalibrasi');
 
@@ -114,6 +117,9 @@ class RiwayatKalibrasiController extends Controller
         $jadwal = JadwalKalibrasi::find($id);
        
         $jadwal->update($data);
+        $alat = Alat::find($request->alat_id);
+        $alat->kalibrasi = "Selesai kalibrasi - ".date("d/M/Y");
+        $alat->save();
         return redirect()->route('riwayat-kalibrasi.index')->with('success','berhasil Mengupdate Riwayat kalibrasi');
 
 

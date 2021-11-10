@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Rencana Perbaikan</label>
-                                            <input type="text" name="rencana_perbaikan" id="kategori" class="form-control" id=""
+                                            <input type="text" name="rencana_perbaikan" id="kategori" class="form-control" id="" value="{{$kerusakan->rencana}}"
                                                 aria-describedby="emailHelp" >
                                         </div>
                                        

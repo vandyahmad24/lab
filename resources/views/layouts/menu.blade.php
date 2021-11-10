@@ -4,7 +4,7 @@
             {{-- menu untuk admin --}}
             {{-- @if (Auth::user()->level=='admin') --}}
             <div class="nav">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('home')}}">
                     Dashboard
                 </a>
                 {{-- <a class="nav-link" href="{{route('master')}}">
@@ -40,9 +40,7 @@
                 <a class="nav-link" href="{{route('alat.index')}}">
                     Data Alat
                 </a>
-                <a class="nav-link" href="{{route('permintaan-bahan.index')}}">
-                    Data Permintaan
-                </a>
+               
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#kalibrasi" aria-expanded="false" aria-controls="kalibrasi">
                     Kalibrasi
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -92,7 +90,10 @@
                         <a class="nav-link" href="{{route('penggunaan-bahan.index')}}">Pengunaan Bahan</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#laporan" aria-expanded="false" aria-controls="laporan">
+                <a class="nav-link" href="{{route('permintaan-bahan.index')}}">
+                    Data Permintaan
+                </a>
+                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#laporan" aria-expanded="false" aria-controls="laporan">
                     
                     Laporan
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -109,7 +110,7 @@
                     </nav>
                    
                 </div>
-                
+                 --}}
             </div>
             {{-- @endif --}}
           

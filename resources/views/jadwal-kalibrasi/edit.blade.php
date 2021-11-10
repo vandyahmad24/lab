@@ -63,6 +63,7 @@
                                         <div class="form-group mb-2">
                                             <label for="">Status Kalibrasi</label>
                                             <select name="status_kalibrasi" id="" class="form-control">
+                                                <option value="terjadwal" {{$jadwal->status_kalibrasi=="terjadwal" ? "selected":'-'  }} >Terjadwal</option>
                                                 <option value="proses-kalibrasi" {{$jadwal->status_kalibrasi=="proses-kalibrasi" ? "selected":'-'  }} >Proses Kalibrasi</option>
                                                 <option value="selesai" {{$jadwal->status_kalibrasi=="selesai" ? "selected":'-'  }} >Selesai</option>
                                                 <option value="tidak-dapat-diproses" {{$jadwal->status_kalibrasi=="tidak-dapat-diproses" ? "selected":'-'  }}  >Tidak Dapat diproses</option>

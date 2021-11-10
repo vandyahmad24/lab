@@ -34,9 +34,9 @@
                                             <th>No</th>
                                             <th>ID Alat</th>
                                             <th>Alat</th>
-                                            <th>PIC</th>
+                                            {{-- <th>PIC</th> --}}
                                             <th>Tanggal Pemeliharaan</th>
-                                            <th>Jenis Pemeliharaan</th>
+                                            {{-- <th>Jenis Pemeliharaan</th> --}}
                                             <th>Kondisi Alat</th>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Laporkan Kerusakan</th>
@@ -50,14 +50,14 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->alat->alat_kode}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
-                                            <td>{{$a->ata->pic->nama ?? "-"}}</td>
+                                            {{-- <td>{{$a->ata->pic->nama ?? "-"}}</td> --}}
                                             @php
                                             // $originalDate = $a->tanggal_kalibrasi."-"."01";
                                             $newDate = date("d-m-Y", strtotime($a->tanggal_pemeliharaan));
                                             // dd($newDate);
                                             @endphp
                                             <td>{{$newDate}}</td>
-                                            <td>{{$a->jenis_pemeliharaan}}</td>
+                                            {{-- <td>{{$a->jenis_pemeliharaan}}</td> --}}
                                             <td>{{$a->kondisi_alat}}</td>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td><a href="{{route('data-kerusakan.create',['alat_id'=>$a->alat->id])}}" class="btn btn-success btn-sm">Buat Laporan</a></td>

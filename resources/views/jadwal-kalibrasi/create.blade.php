@@ -60,6 +60,7 @@
                                         <div class="form-group mb-2">
                                             <label for="">Status Kalibrasi</label>
                                             <select name="status_kalibrasi" id="" class="form-control">
+                                                <option value="terjadwal">Terjadwal</option>
                                                 <option value="proses-kalibrasi">Proses Kalibrasi</option>
                                                 <option value="selesai">Selesai</option>
                                                 <option value="tidak-dapat-diproses">Tidak Dapat diproses</option>

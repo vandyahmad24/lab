@@ -166,4 +166,11 @@ class DataKerusakanController extends Controller
         // $kerusakan= DataKerusakan::find($id);
         // return view('data-kerusakan.permintaan',compact('kerusakan'));
     }
+    public function permintaanCetakSemua()
+    {
+        // dd("halo");
+        $kerusakan= DataKerusakan::orderBy('created_at','desc')->get();
+        $pdf = PDF::loadview('cetak.permintaan-perbaikan',compact('kerusakan'));
+    	return $pdf->stream('permintaan-perbaikan.pdf');
+    }
 }

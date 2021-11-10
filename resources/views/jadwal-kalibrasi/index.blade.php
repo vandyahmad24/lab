@@ -68,6 +68,9 @@
                                                 case 'tidak-dapat-diproses':
                                                     $stat = "Tidak Dapat Diproses";
                                                     break;
+                                                case 'terjadwal':
+                                                    $stat = "Terjadwal";
+                                                    break;
                                                 
                                                 default:
                                                     $stat="";

@@ -14,6 +14,8 @@
                     @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('data-kerusakan.create')}}" class="btn btn-success mb-2">Tambah Data Kerusakan</a>
                     @endif
+                    <a href="{{route('data-kerusakan.cetak-semua')}}" class="btn btn-primary mb-2">Cetak Semua Kerusakan</a>
+                   
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -34,8 +36,8 @@
                                             <th>No</th>
                                             <th>ID Alat</th>
                                             <th>Alat</th>
-                                            <th>Kategori Alat</th>
-                                            <th>PIC</th>
+                                            {{-- <th>Kategori Alat</th> --}}
+                                            {{-- <th>PIC</th> --}}
                                             <th>Tanggal Temuan</th>
                                             <th>Jenis Kerusakan</th>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
@@ -50,8 +52,8 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->alat->alat_kode ?? "-"}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
-                                            <td>{{$a->alat->kategori->nama ?? "-"}}</td>
-                                            <td>{{$a->alat->pic->nama ?? "-"}}</td>
+                                            {{-- <td>{{$a->alat->kategori->nama ?? "-"}}</td> --}}
+                                            {{-- <td>{{$a->alat->pic->nama ?? "-"}}</td> --}}
                                             @php
                                             $originalDate = $a->tanggal_temuan."-"."01";
                                             $newDate = date("m-Y", strtotime($originalDate));

@@ -20,6 +20,10 @@
                     <form method="POST" action="{{route('put-lokasi',$lokasi->id)}}">
                         @csrf
                         <div class="form-group">
+                            <label for="">Kode Lokasi</label>
+                            <input type="text" name="kode" value="{{$lokasi->alat}}" class="form-control" id="" aria-describedby="emailHelp" placeholder="Nama Lokasi" required>
+                          </div>
+                        <div class="form-group">
                           <label for="">Nama Lokasi</label>
                           <input type="text" name="nama" class="form-control" id="" aria-describedby="emailHelp" value={{$lokasi->nama}} placeholder="Nama Kategori" required>
                           

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Permintaan Bahan</title>
+<title>Permintaan Perbaikan</title>
 
 <style type="text/css">
     * {
@@ -22,7 +22,7 @@
 
 </head>
 <body>
-  <h4 align="center">PERMINTAAN BAHAN LABORATORIUM PENGUJIAN</h4>
+  <h4 align="center">PERMINTAAN PERBAIKAN ALAT</h4>
   <table width="100%">
     <tr>
         <td align="left">
@@ -44,7 +44,7 @@
   <table width="100%" style="margin-top: 10px;">
     <tr>
       <td align="left">
-        Permintaan bahan penunjang laboratorium pengujian fisika tekstil dengan rincian sebagai berikut:
+        Permintaan perbaikan alat Laboratorium Pengujian Fisika Teksil dengan rincian sebagai berikut:
       </td>
     </tr>
   </table>
@@ -55,24 +55,26 @@
     <thead style="background-color: lightgray;">
           <tr align="left">
               <th>No</th>
-              <th>Nama Bahan</th>
-              <th>Merek</th>
-              <th>Satuan</th>
-              <th>Kebutuhan</th>
+              <th>Kode Alat</th>
+              <th>Nama Alat</th>
+              <th>Tahun Perolehan</th>
+              <th>Kerusakan</th>
+              <th>Rencana Perbaikan</th>
           </tr>
       </thead>
       <tbody>
           @php
               $i=1;
           @endphp
-          @foreach ($pb as $p)
+          @foreach ($kerusakan as $p)
             <tr>
                 
                 <td>{{$i}}</td>
-                <td>{{$p->nama}}</td>
-                <td>{{$p->merek}}</td>
-                <td>{{$p->satuan}}</td>
-                <td>{{$p->kebutuhan}}</td>
+                <td>{{$p->alat->alat_kode ?? "-"}}</td>
+                <th>{{$p->alat->nama ?? "-"}}</th>
+                <td>{{$p->alat->tahun_perolehan}}</td>
+                <td>{{$p->jenis_kerusakan}}</td>
+                <td>{{$p->rencana}}</td>
             </tr> 
             @php
                     $i++;

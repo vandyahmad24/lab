@@ -63,6 +63,7 @@ class MasterController extends Controller
     }
     public function postLokasi(Request $request)
     {
+
         $data = $request->all();
         // dd($data);
         Lokasi::create($data);
@@ -77,6 +78,7 @@ class MasterController extends Controller
     {
         $lokasi = Lokasi::find($id);
         $lokasi->nama=$request->nama;
+        $lokasi->kode=$request->kode;
         $lokasi->save();
         return redirect()->route('master-lokasi')->with('successlokasi','berhasil mengupdate lokasi data');
     }

@@ -35,9 +35,9 @@
                                             <th>ID Alat</th>
                                             <th>Alat</th>
                                             <th>Tanggal Perbaikan</th>
-                                            <th>Jenis Kerusakan</th>
-                                            <th>Jenis Perbaikan</th>
-                                            <th>Vendor</th>
+                                            {{-- <th>Jenis Kerusakan</th> --}}
+                                            {{-- <th>Jenis Perbaikan</th> --}}
+                                            {{-- <th>Vendor</th> --}}
                                             <th>Bukti Perbaikan</th>
                                             <th>Kondisi Alat</th>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
@@ -57,9 +57,9 @@
                                             // dd($newDate);
                                             @endphp
                                             <td>{{$newDate}}</td>
-                                            <td>{{$a->jenis_kerusakan}}</td>
-                                            <td>{{$a->jenis_perbaikan}}</td>
-                                            <td>{{$a->vendor}}</td>
+                                            {{-- <td>{{$a->jenis_kerusakan}}</td> --}}
+                                            {{-- <td>{{$a->jenis_perbaikan}}</td> --}}
+                                            {{-- <td>{{$a->vendor}}</td> --}}
                                             <td>
                                                 <a href="{{asset('upload/'.$a->bukti_perbaikan)}}" download>
                                                 <img src="{{asset('upload/'.$a->bukti_perbaikan)}}" alt="" style="max-width:600px;width:100%">

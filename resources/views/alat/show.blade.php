@@ -11,6 +11,9 @@
                 <li class="breadcrumb-item active">Data Alat {{$alat->nama}}</li>
             </ol>
             <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary">Cetak</button>
+                </div>
                 <div class="col-md-12">
                     <div class="card mb-4">
                         <div class="card-header">
@@ -55,7 +58,7 @@
                                         </tr>
                                         <tr>
                                             <th>Lokasi</th>
-                                            <td>{{$alat->lokasi->nama ?? '-'}}</td>
+                                            <td> {{$alat->lokasi->kode ?? '-'}} || {{$alat->lokasi->nama ?? '-'}}</td>
                                         </tr>
                                         <tr>
                                             <th>kondisi</th>
@@ -92,39 +95,40 @@
                                         <tr>
                                             <th>Komponen Alat </th>
                                             @php
-                                                $komponen = explode(',',$alat->komponen_alat);
+                                            $komponen = explode(',',$alat->komponen_alat);
                                             @endphp
                                             <td>
                                                 <ol>
                                                     @foreach ($komponen as $kom)
                                                     <li>{{$kom}}</li>
                                                     @endforeach
-                                                    
+
                                                 </ol>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Bahan Habis Pakai </th>
                                             @php
-                                                $bahan = explode(',',$alat->bahan_habis_pakai);
+                                            $bahan = explode(',',$alat->bahan_habis_pakai);
                                             @endphp
                                             <td>
                                                 <ol>
                                                     @foreach ($bahan as $b)
                                                     <li>{{$b}}</li>
                                                     @endforeach
-                                                    
+
                                                 </ol>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Foto</th>
                                             <td>
-                                              
-                                                <img src="{{asset('upload/'.$alat->foto)}}" alt="" style="max-width:600px;width:100%">
+
+                                                <img src="{{asset('upload/'.$alat->foto)}}" alt=""
+                                                    style="max-width:600px;width:100%">
                                             </td>
                                         </tr>
-                                       
+
 
 
 
@@ -134,9 +138,9 @@
                         </div>
                     </div>
                 </div>
-             
+
             </div>
-         
+
         </div>
     </main>
 

@@ -30,6 +30,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -38,6 +39,7 @@
                                         @foreach ($lokasi as $l)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
+                                            <td>{{$l->kode}}</td>
                                             <td>{{$l->nama}}</td>
                                             <td>
                                                 <a href="{{route('edit-lokasi',$l->id)}}"

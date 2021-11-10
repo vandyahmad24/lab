@@ -85,7 +85,7 @@
                                             <select class="form-control" id="lokasi" name="lokasi_id">
                                                 @foreach ($lokasi as $k)
                                                 <option value="{{$k->id}}"
-                                                    {{ $k->lokasi==$alat->lokasi ? 'selected':'' }}>{{$k->nama}}
+                                                    {{ $k->lokasi==$alat->lokasi ? 'selected':'' }}>{{$k->kode}} ||  {{$k->nama}}
                                                 </option>
                                                 @endforeach
                                             </select>
@@ -115,11 +115,12 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Status Kalibrasi</label>
-                                            <select name="kalibrasi" id="" class="form-control">
+                                            {{-- <select name="kalibrasi" id="" class="form-control">
                                                 <option value="proses-kalibrasi" {{$alat->kalibrasi == "proses-kalibrasi" ? "selected":""}} >Proses Kalibrasi</option>
                                                 <option value="selesai" {{$alat->kalibrasi == "selesai" ? "selected":""}}>Selesai</option>
                                                 <option value="tidak-dapat-diproses" {{$alat->kalibrasi == "tidak-dapat-diproses" ? "selected":""}}>Tidak Dapat diproses</option>
-                                            </select>
+                                            </select> --}}
+                                            <input type="text" name="kalibrasi" value="-" class="form-control" readonly>
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="periode_pemeliharaan">Periode Pemeliharaan</label>

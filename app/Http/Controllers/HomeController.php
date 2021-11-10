@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bahan;
+use App\Models\JadwalKalibrasi;
+use App\Models\JadwalPemeliharaan;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class HomeController extends Controller
 {
@@ -25,6 +29,14 @@ class HomeController extends Controller
     public function index()
     {
         $bahan = Bahan::orderBy('created_at')->get();
-        return view('beranda',compact('bahan'));
+        $date = date("Y-m");
+        $jadwal = JadwalKalibrasi::where('tanggal_kalibrasi',$date)->get();
+        $pemeliharaan = JadwalPemeliharaan::whereMonth('tanggal_pemeliharaan', Carbon::now()->month)->orderBy('tanggal_pemeliharaan','desc')->get();
+        // dd($pemeliharaan);
+
+       
+        // dd($date);
+        // dd($jadwal);
+        return view('beranda',compact('bahan','jadwal','pemeliharaan'));
     }
 }

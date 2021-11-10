@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Remark</label>
-                                            <input type="text" name="remark" class="form-control" id="" value="{{$jadwal->remakr}}"
+                                            <input type="text" name="remark" class="form-control" id="" value="{{$jadwal->remark}}"
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="form-group mb-2">

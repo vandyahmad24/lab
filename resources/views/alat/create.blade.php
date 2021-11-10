@@ -78,7 +78,7 @@
                                             <label for="lokasi">Lokasi Alat</label>
                                             <select class="form-control" id="lokasi" name="lokasi_id">
                                                 @foreach ($lokasi as $k)
-                                                <option value="{{$k->id}}">{{$k->nama}}</option>
+                                                <option value="{{$k->id}}"> {{$k->kode}} || {{$k->nama}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -102,11 +102,12 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Status Kalibrasi</label>
-                                            <select name="kalibrasi" id="" class="form-control">
+                                            <input type="text" name="kalibrasi" value="-" class="form-control" readonly>
+                                            {{-- <select name="kalibrasi" id="" class="form-control">
                                                 <option value="proses-kalibrasi">Proses Kalibrasi</option>
                                                 <option value="selesai">Selesai</option>
                                                 <option value="tidak-dapat-diproses">Tidak Dapat diproses</option>
-                                            </select>
+                                            </select> --}}
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="periode_pemeliharaan">Periode Pemeliharaan</label>

@@ -88,7 +88,8 @@ Route::resource('data-kerusakan', DataKerusakanController::class);
 Route::get('/data-kerusakan/delete/{id}',[DataKerusakanController::class, 'destroy'])->name('data-kerusakan.hapus');
 Route::get('/data-kerusakan/permintaan/{id}',[DataKerusakanController::class, 'permintaan'])->name('data-kerusakan.permintaan');
 Route::post('/data-kerusakan/permintaan',[DataKerusakanController::class, 'permintaanCetak'])->name('data-kerusakan.permintaan.cetak');
-
+// permintaanCetakSemua
+Route::get('/data-kerusakan-cetak-semua',[DataKerusakanController::class, 'permintaanCetakSemua'])->name('data-kerusakan.cetak-semua');
 
 
 
@@ -108,7 +109,7 @@ Route::get('/penggunaan-bahan/hapus/{id}', [PenggunaanBahanController::class, 'd
 Route::resource('permintaan-bahan', PermintaanBahanController::class);
 Route::get('/permintaan-bahan/hapus/{id}', [PermintaanBahanController::class, 'destroy'])->name('permintaan-bahan.hapus');
 Route::get('/permintaan-bahan-reset', [PermintaanBahanController::class, 'truncate'])->name('permintaan-bahan.reset');
-Route::get('/permintaan-bahan-cetak', [PermintaanBahanController::class, 'truncate'])->name('permintaan-bahan.cetak');
+Route::get('/permintaan-bahan-cetak', [PermintaanBahanController::class, 'cetak'])->name('permintaan-bahan.cetak');
 
 // laporan
 Route::get('/laporan-equipment', [LaporanController::class, 'index'])->name('laporan-equipment');
