@@ -41,19 +41,19 @@
             </tr>
             <tr align="left">
                 <th>Nama</th>
-                <td>{{$alat->nama}}</td>
+                <td>{{ucwords($alat->nama)}}</td>
             </tr>
             <tr align="left">
                 <th>Kategori</th>
-                <td>{{$alat->kategori->nama ?? '-'}}</td>
+                <td>{{ucwords($alat->kategori->nama )?? '-'}}</td>
             </tr>
             <tr align="left">
                 <th>Merek</th>
-                <td>{{$alat->merek}}</td>
+                <td>{{ucwords($alat->merek)}}</td>
             </tr>
             <tr align="left">
                 <th>Tipe</th>
-                <td>{{$alat->tipe}}</td>
+                <td>{{ucwords($alat->tipe)}}</td>
             </tr>
             <tr align="left">
                 <th>No Seri</th>
@@ -61,7 +61,7 @@
             </tr>
             <tr align="left">
                 <th>Software</th>
-                <td>{{$alat->software}}</td>
+                <td>{{ucwords($alat->software)}}</td>
             </tr>
             <tr align="left">
                 <th>Tahun Perolehan</th>
@@ -77,11 +77,11 @@
             </tr>
             <tr align="left">
                 <th>Status Pengunaan</th>
-                <td>{{$alat->status_pengunaan}}</td>
+                <td>{{ucwords($alat->status_pengunaan)}}</td>
             </tr>
             <tr align="left">
                 <th>Kalibrasi </th>
-                <td>{{$alat->kalibrasi}}</td>
+                <td>{{ucwords($alat->kalibrasi)}}</td>
             </tr>
             <tr align="left">
                 <th>Periode Pemeliharaan </th>
@@ -89,19 +89,19 @@
             </tr>
             <tr align="left">
                 <th>Periode Kalibrasi </th>
-                <td>{{$alat->periode_kalibrasi}}</td>
+                <td>{{ucwords($alat->periode_kalibrasi)}}</td>
             </tr>
             <tr align="left">
                 <th>IK Alat </th>
-                <td>{{$alat->ik_alat}}</td>
+                <td>{{ucwords($alat->ik_alat)}}</td>
             </tr>
             <tr align="left">
                 <th>Manual Book </th>
-                <td>{{$alat->manual_book}}</td>
+                <td>{{ucwords($alat->manual_book)}}</td>
             </tr>
             <tr align="left">
                 <th>PIC </th>
-                <td>{{$alat->pic->nama ?? '-'}}</td>
+                <td>{{ucwords($alat->pic->nama) ?? '-'}}</td>
             </tr>
             <tr align="left">
                 <th>Komponen Alat </th>
@@ -111,7 +111,7 @@
                 <td>
                     <ol>
                         @foreach ($komponen as $kom)
-                        <li>{{$kom}}</li>
+                        <li>{{ucwords($kom)}}</li>
                         @endforeach
 
                     </ol>
@@ -125,7 +125,7 @@
                 <td>
                     <ol>
                         @foreach ($bahan as $b)
-                        <li>{{$b}}</li>
+                        <li>{{ucwords($b)}}</li>
                         @endforeach
 
                     </ol>
@@ -143,14 +143,14 @@
 
 
     <table width="100%" style="margin-top: 55px;">
-        <tr align="left">
+        <tr align="right">
             <td>Mengetahui,
                 <br>
                 Plt. Kasie Pengujian
             </td>
             <td></td>
         </tr>
-        <tr align="center">
+        <tr align="right">
             <td>
                 <br>
             </td>
@@ -158,7 +158,7 @@
                 <br>
             </td>
         </tr>
-        <tr align="center">
+        <tr align="right">
             <td>
                 <br>
             </td>
@@ -166,7 +166,7 @@
                 <br>
             </td>
         </tr>
-        <tr align="center">
+        <tr align="right">
             <td>
                 <br>
             </td>
@@ -174,7 +174,7 @@
                 <br>
             </td>
         </tr>
-        <tr align="center">
+        <tr align="right">
             <td>
                 <br>
             </td>
@@ -183,7 +183,7 @@
             </td>
         </tr>
 
-        <tr align="left">
+        <tr align="right">
             <td>Dra. Srie Sunaryati, M.M.</td>
             <td></td>
         </tr>

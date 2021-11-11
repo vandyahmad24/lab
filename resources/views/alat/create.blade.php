@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Nomer Seri</label>
-                                            <input type="number" name="no_seri" class="form-control" id=""
+                                            <input type="text" name="no_seri" class="form-control" id=""
                                                 aria-describedby="emailHelp" placeholder="Nomer Seri" required>
                                         </div>
                                         <div class="form-group mb-2">

@@ -63,7 +63,7 @@
                                             {{-- <td>{{$a->vendor}}</td> --}}
                                             <td>
                                                 <a href="{{asset('upload/'.$a->bukti_perbaikan)}}" download>
-                                                <img src="{{asset('upload/'.$a->bukti_perbaikan)}}" alt="" style="max-width:600px;width:100%">
+                                                Lihat Bukti
                                                 </a>
                                             </td>
                                             <td>{{$a->kondisi_alat}}</td>

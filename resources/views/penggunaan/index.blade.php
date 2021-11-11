@@ -34,11 +34,12 @@
                                             <th>No</th>
                                             <th>ID Bahan</th>
                                             <th>Nama Bahan</th>
+                                            <th>Merek</th>
                                             <th>Kode Penyimpanan</th>
                                             <th>Tanggal Penggunaan</th>
                                             <th>Jumlah digunakan</th>
                                             <th>Satuan</th>
-                                            <th>Merek</th>
+                                           
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
                                             @endif
@@ -50,11 +51,12 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->bahan->bahan_kode ?? "-"}}</td>
                                             <td>{{$a->bahan->nama_bahan ?? "-"}}</td>
+                                            <td>{{$a->bahan->merek}}</td>
                                             <td>{{$a->bahan->KodePenyimpanan->nama ?? "-"}}</td>
                                             <td>{{$a->tanggal_digunakan}}</td>
                                             <td>{{$a->jumlah_digunakan}}</td>
                                             <td>{{$a->bahan->satuan->nama ?? "-"}}</td>
-                                            <td>{{$a->bahan->merek}}</td>
+                                           
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
                                                 {{-- <a href="{{route('penerimaan-bahan.show',$a->id)}}"><i class="fas fa-eye"></i></a> --}}

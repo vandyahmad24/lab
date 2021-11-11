@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Nomer Seri</label>
-                                            <input type="number" name="no_seri" value="{{$alat->no_seri}}"
+                                            <input type="text" name="no_seri" value="{{$alat->no_seri}}"
                                                 class="form-control" id="" aria-describedby="emailHelp"
                                                 placeholder="Nomer Seri" required>
                                         </div>

@@ -93,52 +93,52 @@
 
 
 
-    <table width="100%" style="margin-top: 55px;">
-        <tr align="left">
-            <td>Mengetahui,
-                <br>
-                Plt. Kasie Pengujian
-            </td>
-            <td></td>
-        </tr>
-        <tr align="center">
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-        </tr>
-        <tr align="center">
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-        </tr>
-        <tr align="center">
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-        </tr>
-        <tr align="center">
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-        </tr>
+   <table width="100%" style="margin-top: 55px;">
+    <tr align="right">
+        <td>Mengetahui,
+            <br>
+            Plt. Kasie Pengujian
+        </td>
+        <td></td>
+    </tr>
+    <tr align="center">
+        <td>
+            <br>
+        </td>
+        <td>
+            <br>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+            <br>
+        </td>
+        <td>
+            <br>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+            <br>
+        </td>
+        <td>
+            <br>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+            <br>
+        </td>
+        <td>
+            <br>
+        </td>
+    </tr>
 
-        <tr align="left">
-            <td>Dra. Srie Sunaryati, M.M.</td>
-            <td></td>
-        </tr>
-    </table>
+    <tr align="right">
+        <td>Dra. Srie Sunaryati, M.M.</td>
+        <td></td>
+    </tr>
+</table>
 
 </body>
 

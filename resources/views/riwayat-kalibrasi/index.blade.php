@@ -50,7 +50,7 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->alat->alat_kode ?? "-"}}</td>
                                             <td>{{$a->alat->nama ?? "-"}}</td>
-                                            <td>{{$a->jenis_kalibrasi}}</td>
+                                            <td>{{ucwords($a->jenis_kalibrasi)}}</td>
                                             @php
                                             $originalDate = $a->tanggal_kalibrasi."-"."01";
                                             $newDate = date("m-Y", strtotime($originalDate));
@@ -60,9 +60,9 @@
                                             <td>{{$a->remark}}</td>
                                             <td>
                                                 @if ($a->sertifikat)
-                                                   <a href="{{asset('upload/'.$a->sertifikat)}}" class="btn btn-primary" download>Lihat Sertifikasi</a>
+                                                   <a href="{{asset('upload/'.$a->sertifikat)}}" class="btn btn-primary" download>Lihat Sertifikat</a>
                                                 @else
-                                                <a href="{{route('riwayat-kalibrasi.edit',$a->id)}}" class="btn btn-warning btn-sm">Belum Upload Sertifikasi</a>
+                                                <a href="{{route('riwayat-kalibrasi.edit',$a->id)}}" class="btn btn-warning btn-sm">Belum Upload Sertifikat</a>
                                                 @endif
                                                 {{-- {{$a->sertifikat}} --}}
                                             </td>

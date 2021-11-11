@@ -30,19 +30,19 @@
                                         </tr>
                                         <tr>
                                             <th>Nama</th>
-                                            <td>{{$alat->nama}}</td>
+                                            <td>{{ucwords($alat->nama)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Kategori</th>
-                                            <td>{{$alat->kategori->nama ?? '-'}}</td>
+                                            <td>{{ucwords($alat->kategori->nama) ?? '-'}}</td>
                                         </tr>
                                         <tr>
                                             <th>Merek</th>
-                                            <td>{{$alat->merek}}</td>
+                                            <td>{{ucwords($alat->merek)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Tipe</th>
-                                            <td>{{$alat->tipe}}</td>
+                                            <td>{{ucwords($alat->tipe)}}</td>
                                         </tr>
                                         <tr>
                                             <th>No Seri</th>
@@ -50,11 +50,11 @@
                                         </tr>
                                         <tr>
                                             <th>Software</th>
-                                            <td>{{$alat->software}}</td>
+                                            <td>{{ucwords($alat->software)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Tahun Perolehan</th>
-                                            <td>{{$alat->tahun_perolehan}}</td>
+                                            <td>{{ucwords($alat->tahun_perolehan)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Lokasi</th>
@@ -62,35 +62,35 @@
                                         </tr>
                                         <tr>
                                             <th>kondisi</th>
-                                            <td>{{$alat->kondisi}}</td>
+                                            <td>{{ucwords($alat->kondisi)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Status Pengunaan</th>
-                                            <td>{{$alat->status_pengunaan}}</td>
+                                            <td>{{ucwords($alat->status_pengunaan)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Kalibrasi </th>
-                                            <td>{{$alat->kalibrasi}}</td>
+                                            <td>{{ucwords($alat->kalibrasi)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Periode Pemeliharaan </th>
-                                            <td>{{$alat->periode_pemeliharaan}}</td>
+                                            <td>{{ucwords($alat->periode_pemeliharaan)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Periode Kalibrasi </th>
-                                            <td>{{$alat->periode_kalibrasi}}</td>
+                                            <td>{{ucwords($alat->periode_kalibrasi)}}</td>
                                         </tr>
                                         <tr>
                                             <th>IK Alat </th>
-                                            <td>{{$alat->ik_alat}}</td>
+                                            <td>{{ucwords($alat->ik_alat)}}</td>
                                         </tr>
                                         <tr>
                                             <th>Manual Book </th>
-                                            <td>{{$alat->manual_book}}</td>
+                                            <td>{{ucwords($alat->manual_book)}}</td>
                                         </tr>
                                         <tr>
                                             <th>PIC </th>
-                                            <td>{{$alat->pic->nama ?? '-'}}</td>
+                                            <td>{{ucwords($alat->pic->nama) ?? '-'}}</td>
                                         </tr>
                                         <tr>
                                             <th>Komponen Alat </th>
@@ -100,7 +100,7 @@
                                             <td>
                                                 <ol>
                                                     @foreach ($komponen as $kom)
-                                                    <li>{{$kom}}</li>
+                                                    <li>{{ucwords($kom)}}</li>
                                                     @endforeach
 
                                                 </ol>
@@ -114,7 +114,7 @@
                                             <td>
                                                 <ol>
                                                     @foreach ($bahan as $b)
-                                                    <li>{{$b}}</li>
+                                                    <li>{{ucwords($b)}}</li>
                                                     @endforeach
 
                                                 </ol>
