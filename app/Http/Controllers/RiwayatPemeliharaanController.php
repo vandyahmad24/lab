@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alat;
 use App\Models\JadwalPemeliharaan;
 use App\Models\Pic;
+use PDF;
 use Illuminate\Http\Request;
 
 class RiwayatPemeliharaanController extends Controller
@@ -21,6 +22,14 @@ class RiwayatPemeliharaanController extends Controller
         return view('riwayat-pemeliharaan.index',compact('jadwal'));
     }
 
+    public function cetak()
+    {
+        // dd("Halo");
+        $jadwal = JadwalPemeliharaan::where('status_pelaksanaan','selesai')->get();
+        $pdf = PDF::loadview('riwayat-pemeliharaan.cetak',compact('jadwal'));
+    	return $pdf->stream('riwayat-pemeliharaan.pdf');
+        // return view('riwayat-pemeliharaan.index',compact('jadwal'));
+    }
     /**
      * Show the form for creating a new resource.
      *

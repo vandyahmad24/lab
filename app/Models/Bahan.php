@@ -9,7 +9,7 @@ class Bahan extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'bahan_kode','nama_bahan','alat_id','stok','satuan_id','kode_penyimpanan_id','limit'
+        'bahan_kode','nama_bahan','alat_id','stok','satuan_id','kode_penyimpanan_id','limit','merek'
     ];
 
     protected $table = 'bahan';

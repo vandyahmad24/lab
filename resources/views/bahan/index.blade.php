@@ -14,6 +14,7 @@
                     @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('bahan.create')}}" class="btn btn-success mb-2">Tambah Data Bahan</a>
                     @endif
+                    <a href="{{route('bahan.cetak')}}" class="btn btn-primary mb-2">Cetak</a>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -38,6 +39,7 @@
                                             <th>Kode Penyimpanan</th>
                                             <th>Stok</th>
                                             <th>Satuan</th>
+                                            <th>Merek</th>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <th>Aksi</th>
                                             @endif
@@ -53,6 +55,7 @@
                                             <td>{{$a->KodePenyimpanan->nama ?? "-"}}</td>
                                             <td>{{$a->stok}}</td>
                                             <td>{{$a->satuan->nama ?? "-"}}</td>
+                                            <td>{{$a->merek ?? "-"}}</td>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td>
                                                 {{-- <a href="{{route('bahan.show',$a->id)}}"><i class="fas fa-eye"></i></a> --}}

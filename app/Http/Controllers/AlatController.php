@@ -8,6 +8,7 @@ use App\Models\Lokasi;
 use App\Models\Pic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use PDF;
 
 
 class AlatController extends Controller
@@ -73,6 +74,15 @@ class AlatController extends Controller
         $alat = Alat::find($id);
         return view('alat.show', compact('alat'));
     }
+
+    public function cetak($id)
+    {
+        $alat = Alat::find($id);
+        $pdf = PDF::loadview('alat.cetak',compact('alat'));
+    	return $pdf->stream('detail-alat.pdf');
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.

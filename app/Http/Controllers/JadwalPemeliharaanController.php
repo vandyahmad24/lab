@@ -6,6 +6,7 @@ use App\Models\Alat;
 use App\Models\JadwalPemeliharaan;
 use App\Models\Pic;
 use Illuminate\Http\Request;
+use PDF;
 
 class JadwalPemeliharaanController extends Controller
 {
@@ -19,6 +20,13 @@ class JadwalPemeliharaanController extends Controller
         $jadwal = JadwalPemeliharaan::where('status_pelaksanaan','!=','selesai')->get();
         // dd($jadwal);
         return view('jadwal-pemeliharaan.index',compact('jadwal'));
+    }
+    public function cetak()
+    {
+        $jadwal = JadwalPemeliharaan::where('status_pelaksanaan','!=','selesai')->get();
+        // dd($jadwal);
+        $pdf = PDF::loadview('jadwal-pemeliharaan.cetak',compact('jadwal'));
+    	return $pdf->stream('jadwal-pemeliharaan.pdf');
     }
 
     /**

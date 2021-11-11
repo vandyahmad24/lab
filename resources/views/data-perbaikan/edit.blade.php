@@ -4,11 +4,11 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Data Perbaiakn Alat</h1>
+            <h1 class="mt-4">Data Perbaikan Alat</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="#calonindex">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('data-perbaikan.index')}}">Perbaiakn Alat</a></li>
-                <li class="breadcrumb-item active">Edit Perbaiakn Alat</li>
+                <li class="breadcrumb-item"><a href="{{route('data-perbaikan.index')}}">Perbaikan Alat</a></li>
+                <li class="breadcrumb-item active">Edit Perbaikan Alat</li>
             </ol>
             <div class="row">
                 <div class="col-md-12">
@@ -24,7 +24,7 @@
                         @endif
 
                         <div class="card-header">
-                            Edit Perbaiakn Alat
+                            Edit Perbaikan Alat
                         </div>
                         <div class="card-body">
                             <div class="row">

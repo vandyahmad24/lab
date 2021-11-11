@@ -14,6 +14,7 @@
                     @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                     <a href="{{route('jadwal-kalibrasi.create')}}" class="btn btn-success mb-2">Tambah Data Jadwal Kalibrasi</a>
                     @endif
+                    <a href="{{route('jadwal-kalibrasi.cetak')}}" class="btn btn-primary mb-2">Cetak</a>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>

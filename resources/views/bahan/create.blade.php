@@ -87,6 +87,11 @@
                                             <input type="number" name="limit" class="form-control" id=""
                                                 aria-describedby="emailHelp" required>
                                         </div>
+                                        <div class="form-group mb-2">
+                                            <label for="">Merek</label>
+                                            <input type="text" name="merek" class="form-control" id=""
+                                                aria-describedby="emailHelp" required>
+                                        </div>
                                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
 
                                 </div>

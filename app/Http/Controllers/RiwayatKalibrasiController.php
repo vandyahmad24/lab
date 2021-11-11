@@ -6,6 +6,7 @@ use App\Models\Alat;
 use App\Models\JadwalKalibrasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use PDF;
 
 class RiwayatKalibrasiController extends Controller
 {
@@ -18,6 +19,12 @@ class RiwayatKalibrasiController extends Controller
     {
         $jadwal = JadwalKalibrasi::where('status_kalibrasi','selesai')->with('alat')->get();
         return view('riwayat-kalibrasi.index',compact('jadwal'));
+    }
+    public function cetak()
+    {
+        $jadwal = JadwalKalibrasi::where('status_kalibrasi','selesai')->with('alat')->get();
+        $pdf = PDF::loadview('riwayat-kalibrasi.cetak',compact('jadwal'));
+    	return $pdf->stream('riwayat-kalibrasi.pdf');
     }
 
     /**

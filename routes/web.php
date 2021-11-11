@@ -74,15 +74,25 @@ Route::resource('pic', PicController::class);
 Route::get('/pic-hapus/{id}',[PicController::class, 'delete'])->name('pic.hapus');
 Route::resource('alat', AlatController::class);
 Route::get('/alat-hapus/{id}',[AlatController::class, 'destroy'])->name('alat.hapus');
+Route::get('/alat-cetak/{id}',[AlatController::class, 'cetak'])->name('alat.cetak');
 Route::resource('jadwal-kalibrasi', JadwalKalibrasiController::class);
 Route::get('/jadwal-kalibrasi/delete/{id}',[JadwalKalibrasiController::class, 'destroy'])->name('jadwal-kalibrasi.hapus');
+Route::get('/jadwal-kalibrasi-cetak',[JadwalKalibrasiController::class, 'cetak'])->name('jadwal-kalibrasi.cetak');
+
+
+
 Route::resource('riwayat-kalibrasi', RiwayatKalibrasiController::class);
 Route::get('/riwayat-kalibrasi/delete/{id}',[RiwayatKalibrasiController::class, 'destroy'])->name('riwayat-kalibrasi.hapus');
+Route::get('/riwayat-kalibrasi-cetak',[RiwayatKalibrasiController::class, 'cetak'])->name('riwayat-kalibrasi.cetak');
 
 Route::resource('jadwal-pemeliharaan', JadwalPemeliharaanController::class);
 Route::get('/jadwal-pemeliharaan/delete/{id}',[JadwalPemeliharaanController::class, 'destroy'])->name('jadwal-pemeliharaan.hapus');
+Route::get('/jadwal-pemeliharaan-cetak',[JadwalPemeliharaanController::class, 'cetak'])->name('jadwal-pemeliharaan.cetak');
+
+
 Route::resource('riwayat-pemeliharaan', RiwayatPemeliharaanController::class);
 Route::get('/riwayat-pemeliharaan/delete/{id}',[RiwayatPemeliharaanController::class, 'destroy'])->name('riwayat-pemeliharaan.hapus');
+Route::get('/riwayat-pemeliharaan-cetak',[RiwayatPemeliharaanController::class, 'cetak'])->name('riwayat-pemeliharaan.cetak');
 
 Route::resource('data-kerusakan', DataKerusakanController::class);
 Route::get('/data-kerusakan/delete/{id}',[DataKerusakanController::class, 'destroy'])->name('data-kerusakan.hapus');
@@ -95,10 +105,12 @@ Route::get('/data-kerusakan-cetak-semua',[DataKerusakanController::class, 'permi
 
 Route::resource('data-perbaikan', DataPerbaikanController::class);
 Route::get('/data-perbaikan/delete/{id}',[DataPerbaikanController::class, 'destroy'])->name('data-perbaikan.hapus');
+Route::get('/data-perbaikan-cetak',[DataPerbaikanController::class, 'cetak'])->name('data-perbaikan.cetak');
 
 // bahan
 Route::resource('bahan', BahanController::class);
 Route::get('/bahan/hapus/{id}', [BahanController::class, 'destroy'])->name('bahan.hapus');
+Route::get('/bahan-cetak', [BahanController::class, 'cetak'])->name('bahan.cetak');
 // 
 Route::resource('penerimaan-bahan', PenerimaanController::class);
 Route::get('/penerimaan-bahan/hapus/{id}', [PenerimaanController::class, 'destroy'])->name('penerimaan-bahan.hapus');

@@ -12,7 +12,7 @@
             </ol>
             <div class="row">
                 <div class="col-md-6">
-                    <button class="btn btn-primary">Cetak</button>
+                    <a href="{{route('alat.cetak',$alat->id)}}" class="btn btn-primary">Cetak</a>
                 </div>
                 <div class="col-md-12">
                     <div class="card mb-4">

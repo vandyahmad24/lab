@@ -7,7 +7,7 @@ use App\Models\Bahan;
 use App\Models\KodePenyimpanan;
 use App\Models\Satuan;
 use Illuminate\Http\Request;
-
+use PDF;
 class BahanController extends Controller
 {
     /**
@@ -20,6 +20,13 @@ class BahanController extends Controller
         $bahan = Bahan::all();
         return view('bahan.index',compact('bahan'));
     }
+    public function cetak()
+    {
+        $bahan = Bahan::all();
+        $pdf = PDF::loadview('bahan.cetak',compact('bahan'));
+    	return $pdf->stream('bahan.pdf');
+    }
+
 
     /**
      * Show the form for creating a new resource.

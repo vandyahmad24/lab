@@ -52,6 +52,7 @@
                                                         data-stok="{{$a->stok}}"
                                                         data-satuan="{{$a->satuan->nama}}"
                                                         data-penyimpanan="{{$a->KodePenyimpanan->nama}}"
+                                                        data-merek="{{$a->merek ?? '-'}}"
                                                         
                                                     > {{$a->bahan_kode}} || {{$a->nama_bahan}}</option>
                                                 @endforeach
@@ -92,6 +93,11 @@
                                             <input type="number"  class="form-control" id="total_stok"
                                                 aria-describedby="emailHelp" readonly value="0">
                                         </div>
+                                        <div class="form-group mb-2">
+                                            <label for="">Merek</label>
+                                            <input type="number"  class="form-control" id="merek"
+                                                aria-describedby="emailHelp" readonly >
+                                        </div>
                                         
                                         
                                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
@@ -116,12 +122,14 @@
             let stok = el.attr("data-stok")
             let satuan = el.attr("data-satuan")
             let penyimpanan = el.attr("data-penyimpanan")
+            let merek = el.attr("data-merek")
             
             $("#nama_alat").val(alat)
             $("#stok").val(stok)
             $("#satuan").val(satuan)
             $("#kode_penyimpanan").val(penyimpanan)
             $("#total_stok").val(stok)
+            $("#merek").val(merek)
             total_stok=stok
 
         });

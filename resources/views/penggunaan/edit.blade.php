@@ -79,7 +79,12 @@
                                             <label for="">Kode Penyimpanan</label>
                                             <input type="text" value="{{$bahan->kodePenyimpanan->nama}}"  class="form-control" id="kode_penyimpanan"
                                                 aria-describedby="emailHelp" readonly>
-                                        </div>                                        
+                                        </div>      
+                                        <div class="form-group mb-2">
+                                            <label for="">Merek</label>
+                                            <input type="text" readonly  class="form-control" id="merek"
+                                                aria-describedby="emailHelp" value="{{$bahan->merek}}" >
+                                        </div>                                  
                                 
                                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
 

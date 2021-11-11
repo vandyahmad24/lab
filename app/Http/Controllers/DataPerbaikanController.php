@@ -7,6 +7,7 @@ use App\Models\DataPerbaikan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Str;
+use PDF;
 
 class DataPerbaikanController extends Controller
 {
@@ -19,6 +20,12 @@ class DataPerbaikanController extends Controller
     {
         $perbaikan = DataPerbaikan::all();
         return view('data-perbaikan.index',compact('perbaikan'));
+    }
+    public function cetak()
+    {
+        $perbaikan = DataPerbaikan::all();
+        $pdf = PDF::loadview('data-perbaikan.cetak',compact('perbaikan'));
+    	return $pdf->stream('data-perbaikan.pdf');
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alat;
 use App\Models\JadwalKalibrasi;
 use Illuminate\Http\Request;
+use PDF;
 
 class JadwalKalibrasiController extends Controller
 {
@@ -18,6 +19,14 @@ class JadwalKalibrasiController extends Controller
         $jadwal = JadwalKalibrasi::where('status_kalibrasi','!=','selesai')->with('alat')->get();
         // dd($jadwal);
         return view('jadwal-kalibrasi.index',compact('jadwal'));
+    }
+    public function cetak()
+    {
+        // dd("halo");
+        $jadwal = JadwalKalibrasi::where('status_kalibrasi','!=','selesai')->with('alat')->get();
+        // dd($jadwal);
+        $pdf = PDF::loadview('jadwal-kalibrasi.cetak',compact('jadwal'));
+    	return $pdf->stream('jadwal-kalibrasi.pdf');
     }
 
     /**
