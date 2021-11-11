@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Manajemen Lab</title>
+        <title>Manajemen Alat Laboratorium Pengujian </title>
         <link href="{{asset('admin/css/styles.css')}}" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -63,7 +63,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Manajemen Lab</div>
+                            <div class="text-muted">Copyright &copy; Manajemen Alat Laboratorium Pengujian </div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;

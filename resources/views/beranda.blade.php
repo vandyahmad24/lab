@@ -8,7 +8,7 @@
 
             <div class="card mb-4">
                 <div class="card-body">
-                    Manajemen Lab
+                    Manajemen Alat Laboratorium Pengujian 
                 </div>
             </div>
             <div class="row">
