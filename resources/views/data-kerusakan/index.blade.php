@@ -51,7 +51,7 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->alat->alat_kode ?? "-"}}</td>
-                                            <td>{{$a->alat->nama ?? "-"}}</td>
+                                            <td>{{ucwords($a->alat->nama) ?? "-"}}</td>
                                             {{-- <td>{{$a->alat->kategori->nama ?? "-"}}</td> --}}
                                             {{-- <td>{{$a->alat->pic->nama ?? "-"}}</td> --}}
                                             @php
@@ -60,7 +60,7 @@
                                             // dd($newDate);
                                             @endphp
                                             <td>{{$newDate}}</td>
-                                            <td>{{$a->jenis_kerusakan}}</td>
+                                            <td>{{ucwords($a->jenis_kerusakan)}}</td>
                                             @if  (Auth::user()->level=='admin' || Auth::user()->level=='internal')
                                             <td><a href="{{route('data-kerusakan.permintaan',$a->id)}}" class="btn btn-primary btn-sm">Ajukan Permintaan</a>
 

@@ -48,11 +48,11 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->alat_kode}}</td>
-                                            <td>{{$a->nama}}</td>
-                                            <td>{{$a->kategori->nama ?? '-'}}</td>
-                                            <td>{{$a->status_pengunaan}}</td>
-                                            <td>{{$a->kalibrasi}}</td>
-                                            <td>{{$a->pic->nama ?? '-'}}</td>
+                                            <td>{{ucwords($a->nama)}}</td>
+                                            <td>{{ucwords($a->kategori->nama) ?? '-'}}</td>
+                                            <td>{{ucwords($a->status_pengunaan)}}</td>
+                                            <td>{{ucwords($a->kalibrasi)}}</td>
+                                            <td>{{ucwords($a->pic->nama) ?? '-'}}</td>
                                             <td>{{$a->tahun_perolehan}}</td>
                                             <td>
                                                 <a href="{{route('alat.show',$a->id)}}"><i class="fas fa-eye"></i></a>

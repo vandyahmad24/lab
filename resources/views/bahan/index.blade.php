@@ -51,9 +51,9 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$a->bahan_kode}}</td>
-                                            <td>{{$a->nama_bahan}}</td>
-                                            <td>{{$a->merek ?? "-"}}</td>
-                                            <td>{{$a->alat->nama ?? "-"}}</td>
+                                            <td>{{ucwords($a->nama_bahan)}}</td>
+                                            <td>{{ucwords($a->merek) ?? "-"}}</td>
+                                            <td>{{ucwords($a->alat->nama) ?? "-"}}</td>
                                             <td>{{$a->KodePenyimpanan->nama ?? "-"}}</td>
                                             <td>{{$a->stok}}</td>
                                             <td>{{$a->satuan->nama ?? "-"}}</td>
