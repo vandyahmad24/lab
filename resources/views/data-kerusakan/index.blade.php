@@ -56,7 +56,7 @@
                                             {{-- <td>{{$a->alat->pic->nama ?? "-"}}</td> --}}
                                             @php
                                             $originalDate = $a->tanggal_temuan."-"."01";
-                                            $newDate = date("m-Y", strtotime($originalDate));
+                                            $newDate = date("d-m-Y", strtotime($originalDate));
                                             // dd($newDate);
                                             @endphp
                                             <td>{{$newDate}}</td>

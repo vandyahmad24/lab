@@ -175,7 +175,7 @@
                                     @foreach ($pemeliharaan as $b)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$b->alat->alat_kode ?? "-"}} || {{$b->alat->nama}} </td>
+                                        <td>{{$b->alat->alat_kode ?? "-"}} || {{$b->alat->nama ?? "-"}}  </td>
                                         <td>{{$b->tanggal_pemeliharaan}}</td>
                                         <td>{{$b->status_pelaksanaan}}</td>
                                     </tr>
